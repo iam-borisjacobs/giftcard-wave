@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Admin Dashboard - Giftcard Wave</title>
+    <!-- Adjusted paths for admin subfolder -->
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <script src="../assets/js/app.js" defer></script>
+    <style>
+        /* Admin Specific Overrides */
+        :root {
+            --sidebar-width: 260px;
+        }
+
+        .admin-header {
+            background: #1e1b4b;
+            /* Indigo tint for admin */
+        }
+
+        .sidebar-logo {
+            background: #ef4444;
+            /* Red logo for admin to distinguish */
+        }
+    </style>
+</head>
+
+<body data-page="admin-dashboard" data-title="Admin Overview" data-subtitle="System health and key metrics for today.">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell" id="app">
+        <!-- Admin Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Loaded via partial -->
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">A</div>
+                <div class="logo-text">CW Admin</div>
+            </div>
+
+            <header class="page-header" id="header">
+                <!-- Loaded via partial -->
+            </header>
+
+
+            <div class="grid">
+
+                <!-- Admin Stats -->
+                <section class="card" style="grid-column: span 2;">
+                    <div class="wallet-stats">
+                        <div class="wallet-stat">
+                            <div class="wallet-stat-label">Total Users</div>
+                            <div class="wallet-stat-value">8,492</div>
+                            <div class="wallet-profit positive">+ 124 this week</div>
+                        </div>
+                        <div class="wallet-stat">
+                            <div class="wallet-stat-label">System Volume (24h)</div>
+                            <div class="wallet-stat-value">₦ 45.2M</div>
+                            <div class="wallet-profit">1,202 txs</div>
+                        </div>
+                        <div class="wallet-stat">
+                            <div class="wallet-stat-label">Pending KYC</div>
+                            <div class="wallet-stat-value" style="color: #fb923c;">18</div>
+                            <div class="wallet-stat-sub">Action Required</div>
+                        </div>
+                        <div class="wallet-stat">
+                            <div class="wallet-stat-label">Active Disputes</div>
+                            <div class="wallet-stat-value" style="color: #ef4444;">5</div>
+                            <div class="wallet-stat-sub">High Priority</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Ongoing Activity / System Health -->
+                <section class="card">
+                    <div class="card-header">
+                        <div class="card-title">Live Interactions</div>
+                    </div>
+                    <div class="escrow-list">
+                        <!-- Activity Item -->
+                        <div class="escrow-row">
+                            <div class="status-row">
+                                <span class="avatar" style="width: 28px; height: 28px; background: #0ea5e9;">U</span>
+                                <div>
+                                    <div style="font-size: 12px; color: var(--muted);">User Registration</div>
+                                    <div style="font-size: 13px; font-weight: 500;">New user "Davido88" joined</div>
+                                </div>
+                            </div>
+                            <span style="font-size: 11px; color: var(--muted);">2m ago</span>
+                        </div>
+
+                        <div class="escrow-row">
+                            <div class="status-row">
+                                <span class="avatar" style="width: 28px; height: 28px; background: #22c55e;">D</span>
+                                <div>
+                                    <div style="font-size: 12px; color: var(--muted);">Deposit</div>
+                                    <div style="font-size: 13px; font-weight: 500;">Received 0.05 BTC</div>
+                                </div>
+                            </div>
+                            <span style="font-size: 11px; color: var(--muted);">5m ago</span>
+                        </div>
+
+                        <div class="escrow-row">
+                            <div class="status-row">
+                                <span class="avatar" style="width: 28px; height: 28px; background: #fb923c;">K</span>
+                                <div>
+                                    <div style="font-size: 12px; color: var(--muted);">KYC Submission</div>
+                                    <div style="font-size: 13px; font-weight: 500;">User "SarahJ" submitted Level 2
+                                    </div>
+                                </div>
+                            </div>
+                            <span style="font-size: 11px; color: var(--muted);">12m ago</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Pending Actions Table -->
+                <section class="card">
+                    <div class="card-header">
+                        <div class="card-title">Pending Approvals</div>
+                    </div>
+                    <div class="wallet-history-wrapper">
+                        <table class="tx-table table-dense">
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>User</th>
+                                    <th>Value</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="tier-pill">Withdrawal</span></td>
+                                    <td>BigMike</td>
+                                    <td>₦ 500k</td>
+                                    <td><button class="btn btn-outline btn-sm"
+                                            style="padding: 2px 8px; font-size: 10px;">Review</button></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="tier-pill" style="background: #fb923c;">KYC L2</span></td>
+                                    <td>Anita_O</td>
+                                    <td>-</td>
+                                    <td><button class="btn btn-outline btn-sm"
+                                            style="padding: 2px 8px; font-size: 10px;">Review</button></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="tier-pill" style="background: #ef4444;">Dispute</span></td>
+                                    <td>Trade #992</td>
+                                    <td>$50</td>
+                                    <td><button class="btn btn-outline btn-sm"
+                                            style="padding: 2px 8px; font-size: 10px;">Resolve</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+    <div id="footer">
+        <!-- Loaded via partial -->
+    </div>
+
+</body>
+
+</html>

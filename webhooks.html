@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Webhooks - Giftcard Wave</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/app.js" defer></script>
+</head>
+
+<body data-page="webhooks">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">G</div>
+                <div>
+                    <div class="sidebar-title">Giftcard Wave</div>
+                    <div class="sidebar-subtitle">Gift card and crypto P2P desk</div>
+                </div>
+            </div>
+
+            <!-- Overview -->
+            <div class="menu-group-label">Overview</div>
+            <ul class="menu">
+                <li>
+                    <a class="menu-item" href="index.html">
+                        <span class="icon">🏠</span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="analytics.html">
+                        <span class="icon">📊</span>
+                        <span>Analytics</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="wallet.html">
+                        <span class="icon">👛</span>
+                        <span>Wallet</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="transactions.html">
+                        <span class="icon">🧾</span>
+                        <span>Transactions</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Finance -->
+            <div class="menu-group-label">Finance</div>
+            <ul class="menu">
+                <li>
+                    <a class="menu-item" href="deposit.html">
+                        <span class="icon">📥</span>
+                        <span>Deposit</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="withdraw.html">
+                        <span class="icon">📤</span>
+                        <span>Withdraw</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="escrow.html">
+                        <span class="icon">🤝</span>
+                        <span>Escrow</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Trading tools menu -->
+            <div class="menu-group-label">Trading tools</div>
+            <ul class="menu">
+                <li>
+                    <a class="menu-item" href="giftcard-offers.html">
+                        <span class="icon">🎁</span>
+                        <span>Gift card offers</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="crypto-p2p.html">
+                        <span class="icon">🪙</span>
+                        <span>Crypto P2P</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="rate-calculator.html">
+                        <span class="icon">🧮</span>
+                        <span>Rate calculator</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="favorites.html">
+                        <span class="icon">⭐</span>
+                        <span>Favorites</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="rate-target.html">
+                        <span class="icon">🎯</span>
+                        <span>Rate target</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="show-love.html">
+                        <span class="icon">❤️</span>
+                        <span>Show love</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- User Settings -->
+            <div class="menu-group-label">User Settings</div>
+            <ul class="menu">
+                <li>
+                    <a class="menu-item" href="verification.html">
+                        <span class="icon">🛡️</span>
+                        <span>Verification</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="referral.html">
+                        <span class="icon">users</span>
+                        <span>Referrals</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="rewards.html">
+                        <span class="icon">🏅</span>
+                        <span>Rewards</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="settings.html">
+                        <span class="icon">⚙️</span>
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="leaderboard.html">
+                        <span class="icon">🏆</span>
+                        <span>Leaderboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="logout.html">
+                        <span class="icon">🚪</span>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">G</div>
+                <div class="logo-text">Giftcard Wave</div>
+            </div>
+
+            <header class="page-header">
+                <div>
+                    <div class="page-header-title">Webhooks</div>
+                    <div class="page-header-sub">
+                        Configure webhook endpoints to receive real-time updates.
+                    </div>
+                </div>
+                <div class="theme-toggle-container">
+                    <input type="checkbox" id="themeToggle" class="theme-switch">
+                    <label for="themeToggle" class="theme-switch-label"></label>
+                </div>
+            </header>
+
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Webhook Endpoints</div>
+                        <div class="card-subtitle">
+                            Listen for events like <code>trade.completed</code> or <code>deposit.confirmed</code>.
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-sm">Add Endpoint</button>
+                </div>
+
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Endpoint URL</th>
+                                <th>Events</th>
+                                <th>Mode</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>https://api.mysite.com/hooks</code></td>
+                                <td>All events</td>
+                                <td>Live</td>
+                                <td><span class="tag tag-success">Enabled</span></td>
+                                <td>
+                                    <button class="btn btn-outline btn-sm">Edit</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="card-header">
+                    <div class="card-title">Recent Deliveries</div>
+                </div>
+                <!-- Mock log -->
+                <div class="table-container">
+                    <table class="table table-dense">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Event</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#WH-9928</td>
+                                <td>trade.created</td>
+                                <td>10:42 AM</td>
+                                <td><span class="tag tag-success">200 OK</span></td>
+                            </tr>
+                            <tr>
+                                <td>#WH-9927</td>
+                                <td>deposit.received</td>
+                                <td>09:15 AM</td>
+                                <td><span class="tag tag-success">200 OK</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+
+</html>

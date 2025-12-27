@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Transactions - Giftcard Wave Admin</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <script src="../assets/js/app.js" defer></script>
+    <style>
+        /* Admin Specific Overrides */
+        :root {
+            --sidebar-width: 260px;
+        }
+
+        .admin-header {
+            background: #1e1b4b;
+        }
+
+        .sidebar-logo {
+            background: #ef4444;
+        }
+
+        /* Tx Type Badge */
+        .tx-badge {
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .tx-deposit {
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+        }
+
+        .tx-withdraw {
+            background: rgba(248, 113, 113, 0.15);
+            color: #f87171;
+        }
+
+        .tx-trade {
+            background: rgba(6, 182, 212, 0.15);
+            color: #22d3ee;
+        }
+    </style>
+</head>
+
+<body data-page="admin-transactions" data-title="Global Transactions"
+    data-subtitle="Monitor all financial activity across the platform.">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell" id="app">
+        <!-- Admin Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Loaded via partial -->
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">A</div>
+                <div class="logo-text">CW Admin</div>
+            </div>
+
+            <header class="page-header" id="header">
+                <!-- Loaded via partial -->
+            </header>
+
+
+            <div class="grid">
+
+                <!-- Filter Tabs -->
+                <section class="card" style="grid-column: span 2; padding: 12px;">
+                    <div style="display: flex; gap: 8px; overflow-x: auto;">
+                        <button class="btn btn-primary btn-sm">All</button>
+                        <button class="btn btn-outline btn-sm">Deposits</button>
+                        <button class="btn btn-outline btn-sm">Withdrawals</button>
+                        <button class="btn btn-outline btn-sm">Trades</button>
+                        <button class="btn btn-outline btn-sm">Referrals</button>
+                    </div>
+                </section>
+
+                <!-- Main Table -->
+                <section class="card" style="grid-column: span 2;">
+                    <div class="wallet-history-wrapper">
+                        <table class="tx-table table-dense">
+                            <thead>
+                                <tr>
+                                    <th>TxID</th>
+                                    <th>Type</th>
+                                    <th>User</th>
+                                    <th>Amount</th>
+                                    <th>Fee</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Row 1: Deposit -->
+                                <tr>
+                                    <td class="muted small">#TX99281</td>
+                                    <td><span class="tx-badge tx-deposit">Deposit</span></td>
+                                    <td>
+                                        <div style="display: flex; align-items: center; gap: 6px;">
+                                            <span class="avatar"
+                                                style="width: 18px; height: 18px; font-size: 9px;">JD</span>
+                                            JohnDoe
+                                        </div>
+                                    </td>
+                                    <td style="color: #4ade80;">+ 50,000 NGN</td>
+                                    <td class="muted">0</td>
+                                    <td class="muted small">Today, 10:30</td>
+                                    <td><span class="tag tag-success">Success</span></td>
+                                    <td><button class="btn btn-outline btn-sm"
+                                            style="padding: 2px; height: 20px; font-size: 10px;">View</button></td>
+                                </tr>
+
+                                <!-- Row 2: Withdrawal -->
+                                <tr>
+                                    <td class="muted small">#TX99275</td>
+                                    <td><span class="tx-badge tx-withdraw">Withdraw</span></td>
+                                    <td>
+                                        <div style="display: flex; align-items: center; gap: 6px;">
+                                            <span class="avatar"
+                                                style="width: 18px; height: 18px; font-size: 9px; background: #fb923c;">BM</span>
+                                            BigMike
+                                        </div>
+                                    </td>
+                                    <td style="color: #f87171;">- 250,000 NGN</td>
+                                    <td class="muted">3,750</td>
+                                    <td class="muted small">Today, 09:15</td>
+                                    <td><span class="tag tag-warning">Pending</span></td>
+                                    <td><button class="btn btn-outline btn-sm"
+                                            style="padding: 2px; height: 20px; font-size: 10px;">Approve</button></td>
+                                </tr>
+
+                                <!-- Row 3: Trade -->
+                                <tr>
+                                    <td class="muted small">#TX99211</td>
+                                    <td><span class="tx-badge tx-trade">P2P Trade</span></td>
+                                    <td>
+                                        <div style="display: flex; align-items: center; gap: 6px;">
+                                            <span class="avatar"
+                                                style="width: 18px; height: 18px; font-size: 9px; background: #06b6d4;">AX</span>
+                                            AlexCrypto
+                                        </div>
+                                    </td>
+                                    <td>0.005 BTC</td>
+                                    <td class="muted">0.0001</td>
+                                    <td class="muted small">Yesterday</td>
+                                    <td><span class="tag tag-success">Completed</span></td>
+                                    <td><button class="btn btn-outline btn-sm"
+                                            style="padding: 2px; height: 20px; font-size: 10px;">Details</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Simple Pagination -->
+                    <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 20px;">
+                        <span class="muted small" style="align-self: center; margin-right: 12px;">Showing 1-20 of
+                            1,203</span>
+                        <button class="btn btn-outline btn-sm">Prev</button>
+                        <button class="btn btn-outline btn-sm">Next</button>
+                    </div>
+
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <div id="footer">
+        <!-- Loaded via partial -->
+    </div>
+
+</body>
+
+</html>

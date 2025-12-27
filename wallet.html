@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Giftcard & Crypto P2P - Wallet</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/app.js" defer></script>
+</head>
+
+<body data-page="wallet" data-title="Wallet overview"
+    data-subtitle="Manage your NGN and crypto balances, and track wallet activity.">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell" id="app">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Loaded via partial -->
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">G</div>
+                <div class="logo-text">Giftcard Wave</div>
+            </div>
+
+            <header class="page-header" id="header">
+                <!-- Loaded via partial -->
+            </header>
+
+            <!-- Top section: balances + quick stats -->
+            <div class="wallet-layout">
+                <!-- Balances -->
+                <section class="card">
+                    <div class="wallet-user">
+                        <div class="row">
+                            <div class="avatar">U</div>
+                            <div>
+                                <div class="muted">Current user</div>
+                                <div class="small">
+                                    <strong id="wallet-username">You</strong>
+                                    <span class="muted">&nbsp;Verified tier 1</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="chip">
+                            <span class="chip-dot"></span>
+                            Wallet secure
+                        </span>
+                    </div>
+
+                    <hr />
+
+                    <div>
+                        <label class="muted">Balances</label>
+                        <div class="balance-group">
+                            <div class="balance-card">
+                                <div class="balance-label">NGN balance</div>
+                                <div class="balance-value">
+                                    <strong id="wallet-balance-ng">0</strong>
+                                </div>
+                            </div>
+                            <div class="balance-card">
+                                <div class="balance-label">BTC balance</div>
+                                <div class="balance-value">
+                                    <strong id="wallet-balance-btc">0</strong>
+                                </div>
+                            </div>
+                            <div class="balance-card">
+                                <div class="balance-label">USDT balance</div>
+                                <div class="balance-value">
+                                    <strong id="wallet-balance-usdt">0</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div class="wallet-stats">
+                        <div class="wallet-stat">
+                            <div class="wallet-stat-label">Total fiat value (demo)</div>
+                            <div class="wallet-stat-value" id="wallet-total-fiat">NGN 0</div>
+                        </div>
+                        <div class="wallet-stat">
+                            <div class="wallet-stat-label">Open escrows (demo)</div>
+                            <div class="wallet-stat-value" id="wallet-open-escrows">0</div>
+                        </div>
+                        <div class="wallet-stat">
+                            <div class="wallet-stat-label">Completed trades (demo)</div>
+                            <div class="wallet-stat-value" id="wallet-completed-trades">0</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Actions -->
+                <section class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">Wallet actions</div>
+                            <div class="card-subtitle">
+                                Deposit, withdraw or move funds between your internal wallets.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tabs -->
+                    <div class="wallet-tabs">
+                        <button class="wallet-tab active" data-tab="deposit">Deposit</button>
+                        <button class="wallet-tab" data-tab="withdraw">Withdraw</button>
+                        <button class="wallet-tab" data-tab="transfer">Transfer</button>
+                    </div>
+
+                    <!-- Deposit -->
+                    <div id="tab-deposit" class="wallet-tab-panel active">
+                        <form id="deposit-form">
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <label>Currency</label>
+                                    <select id="deposit-currency">
+                                        <option value="NGN">NGN</option>
+                                        <option value="BTC">BTC</option>
+                                        <option value="USDT">USDT</option>
+                                    </select>
+                                </div>
+                                <div class="form-col">
+                                    <label>Amount</label>
+                                    <input type="number" id="deposit-amount" min="0" step="0.0001" placeholder="0.00"
+                                        required />
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 8px">
+                                <label>Method (demo)</label>
+                                <select id="deposit-method">
+                                    <option value="bank">Bank transfer</option>
+                                    <option value="card">Card payment</option>
+                                    <option value="onchain">On-chain (for crypto)</option>
+                                </select>
+                            </div>
+
+                            <div style="margin-top: 8px">
+                                <label>Note (optional)</label>
+                                <textarea id="deposit-note" rows="2"
+                                    placeholder="Reference / additional info"></textarea>
+                            </div>
+
+                            <div style="margin-top: 10px; display: flex; gap: 8px">
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                    Add demo deposit
+                                </button>
+                                <span class="muted small">
+                                    This is a front-end demo. No real funds are moved.
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Withdraw -->
+                    <div id="tab-withdraw" class="wallet-tab-panel">
+                        <form id="withdraw-form">
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <label>Currency</label>
+                                    <select id="withdraw-currency">
+                                        <option value="NGN">NGN</option>
+                                        <option value="BTC">BTC</option>
+                                        <option value="USDT">USDT</option>
+                                    </select>
+                                </div>
+                                <div class="form-col">
+                                    <label>Amount</label>
+                                    <input type="number" id="withdraw-amount" min="0" step="0.0001" placeholder="0.00"
+                                        required />
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 8px">
+                                <label>Destination (demo)</label>
+                                <input id="withdraw-destination" placeholder="Bank account / wallet address" />
+                            </div>
+
+                            <div style="margin-top: 10px; display: flex; gap: 8px">
+                                <button type="submit" class="btn btn-outline btn-sm">
+                                    Create demo withdrawal
+                                </button>
+                                <span class="muted small">
+                                    In production this would trigger a real payout.
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Transfer -->
+                    <div id="tab-transfer" class="wallet-tab-panel">
+                        <form id="transfer-form">
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <label>From</label>
+                                    <select id="transfer-from">
+                                        <option value="NGN">NGN</option>
+                                        <option value="BTC">BTC</option>
+                                        <option value="USDT">USDT</option>
+                                    </select>
+                                </div>
+                                <div class="form-col">
+                                    <label>To</label>
+                                    <select id="transfer-to">
+                                        <option value="NGN">NGN</option>
+                                        <option value="BTC">BTC</option>
+                                        <option value="USDT">USDT</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 8px">
+                                <label>Amount</label>
+                                <input type="number" id="transfer-amount" min="0" step="0.0001" placeholder="0.00"
+                                    required />
+                            </div>
+
+                            <div style="margin-top: 8px">
+                                <label>Note (optional)</label>
+                                <textarea id="transfer-note" rows="2"
+                                    placeholder="Internal move between wallets"></textarea>
+                            </div>
+
+                            <div style="margin-top: 10px; display: flex; gap: 8px">
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                    Add demo transfer
+                                </button>
+                                <span class="muted small">
+                                    Simple 1:1 demo transfer between balances.
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+
+            <!-- History -->
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Wallet history</div>
+                        <div class="card-subtitle">
+                            Lightweight demo ledger for deposits, withdrawals and transfers.
+                        </div>
+                    </div>
+                    <button id="wallet-clear-history" class="btn btn-outline btn-sm">
+                        Clear history (demo)
+                    </button>
+                </div>
+
+                <div class="wallet-history-wrapper">
+                    <table class="tx-table">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Type</th>
+                                <th>Currency</th>
+                                <th>Amount</th>
+                                <th>Direction</th>
+                                <th>Note</th>
+                            </tr>
+                        </thead>
+                        <tbody id="wallet-tx-body">
+                            <!-- Filled by JS -->
+                        </tbody>
+                    </table>
+                    <div id="wallet-tx-empty" class="muted small">
+                        No wallet activity yet. Perform a demo deposit, withdrawal or transfer.
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer" id="footer">
+        <!-- Loaded via partial -->
+    </footer>
+</body>
+
+</html>

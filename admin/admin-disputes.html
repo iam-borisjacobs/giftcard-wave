@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Dispute Resolution - Giftcard Wave Admin</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <script src="../assets/js/app.js" defer></script>
+    <style>
+        /* Admin Specific Overrides */
+        :root {
+            --sidebar-width: 260px;
+        }
+
+        .admin-header {
+            background: #1e1b4b;
+        }
+
+        .sidebar-logo {
+            background: #ef4444;
+        }
+
+        .dispute-list-item {
+            padding: 12px;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .dispute-list-item:hover,
+        .dispute-list-item.active {
+            background: rgba(148, 163, 184, 0.05);
+        }
+
+        .dispute-list-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body data-page="admin-disputes" data-title="Dispute Center" data-subtitle="Review evidence and resolve P2P conflicts.">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell" id="app">
+        <!-- Admin Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Loaded via partial -->
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">A</div>
+                <div class="logo-text">CW Admin</div>
+            </div>
+
+            <header class="page-header" id="header">
+                <!-- Loaded via partial -->
+            </header>
+
+
+            <div class="grid">
+
+                <!-- Dispute List (Left Col) -->
+                <section class="card" style="padding: 0; overflow: hidden; align-self: start;">
+                    <div class="card-header" style="padding: 16px; border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
+                        <div class="card-title">Active Disputes (2)</div>
+                    </div>
+
+                    <div class="dispute-list-item active">
+                        <div class="row space-between" style="margin-bottom: 4px;">
+                            <span class="badge" style="background: #ef4444; color: #fff; font-size: 10px;">URGENT</span>
+                            <span class="muted small">2m ago</span>
+                        </div>
+                        <div style="font-weight: 500; font-size: 14px;">Trade #88291</div>
+                        <div class="muted small">Buyer claims card invalid</div>
+                        <div class="row" style="margin-top: 8px; gap: 8px;">
+                            <div
+                                style="background: rgba(148, 163, 184, 0.1); padding: 2px 6px; border-radius: 4px; font-size: 10px;">
+                                UserA</div>
+                            <div style="font-size: 10px;">vs</div>
+                            <div
+                                style="background: rgba(148, 163, 184, 0.1); padding: 2px 6px; border-radius: 4px; font-size: 10px;">
+                                SellerB</div>
+                        </div>
+                    </div>
+
+                    <div class="dispute-list-item">
+                        <div class="row space-between" style="margin-bottom: 4px;">
+                            <span class="badge" style="background: #f59e0b; color: #000; font-size: 10px;">OPEN</span>
+                            <span class="muted small">1h ago</span>
+                        </div>
+                        <div style="font-weight: 500; font-size: 14px;">Trade #88100</div>
+                        <div class="muted small">Seller unresponsive</div>
+                    </div>
+                </section>
+
+
+                <!-- Dispute Detail (Right Col) -->
+                <section class="card" style="grid-column: span 2;">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">Trade #88291 - $100 Amazon Gift Card</div>
+                            <div class="card-subtitle">Started by <strong>Buyer (UserA)</strong> • Reason: Invalid Card
+                            </div>
+                        </div>
+                        <div>
+                            <span style="font-size: 18px; font-weight: 600; color: #4ade80;">Locked: ₦ 115,000</span>
+                        </div>
+                    </div>
+
+                    <div class="chat-box">
+                        <div class="chat-messages">
+                            <div class="chat-system">Trade started by UserA</div>
+                            <div class="chat-system">Escrow Funded: ₦ 115,000</div>
+
+                            <div class="chat-bubble received">
+                                Hi, I am ready to trade. Uploading card now.
+                                <div class="chat-meta">SellerB • 10:00 AM</div>
+                            </div>
+
+                            <div class="chat-bubble received">
+                                [Image: Amazon-Card-Back.jpg]
+                                <div class="chat-meta">SellerB • 10:01 AM</div>
+                            </div>
+
+                            <div class="chat-bubble sent">
+                                Checking... one sec.
+                                <div class="chat-meta">UserA • 10:02 AM</div>
+                            </div>
+
+                            <div class="chat-bubble sent">
+                                Bro this card is already redeemed. Check the screenshot.
+                                <div class="chat-meta">UserA • 10:05 AM</div>
+                            </div>
+
+                            <div class="chat-system">Dispute Started by UserA</div>
+                            <div class="chat-system">Reason: "Card was already redeemed"</div>
+
+                            <div class="chat-bubble received">
+                                No way, I just bought it. You are trying to rip me off.
+                                <div class="chat-meta">SellerB • 10:06 AM</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Admin Actions -->
+                    <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(148, 163, 184, 0.1);">
+                        <div style="margin-bottom: 12px; font-weight: 500;">Admin Resolution</div>
+                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                            <div
+                                style="flex: 1; padding: 12px; background: rgba(34, 197, 94, 0.05); border: 1px solid rgba(34, 197, 94, 0.2); border-radius: 8px;">
+                                <div style="font-size: 13px; font-weight: 600; color: #4ade80; margin-bottom: 4px;">
+                                    Release to Buyer (UserA)</div>
+                                <p class="muted small" style="margin-bottom: 10px;">Refund the money back to the buyer's
+                                    wallet.</p>
+                                <button class="btn btn-primary btn-sm"
+                                    style="width: 100%; background: #22c55e; border-color: #22c55e;">Refund
+                                    Buyer</button>
+                            </div>
+
+                            <div
+                                style="flex: 1; padding: 12px; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 8px;">
+                                <div style="font-size: 13px; font-weight: 600; color: #60a5fa; margin-bottom: 4px;">
+                                    Release to Seller (SellerB)</div>
+                                <p class="muted small" style="margin-bottom: 10px;">Complete the trade and send funds to
+                                    seller.</p>
+                                <button class="btn btn-primary btn-sm"
+                                    style="width: 100%; background: #3b82f6; border-color: #3b82f6;">Release to
+                                    Seller</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <div id="footer">
+        <!-- Loaded via partial -->
+    </div>
+
+</body>
+
+</html>

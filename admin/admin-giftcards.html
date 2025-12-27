@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Gift Cards - Giftcard Wave Admin</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <script src="../assets/js/app.js" defer></script>
+    <style>
+        /* Admin Specific Overrides */
+        :root {
+            --sidebar-width: 260px;
+        }
+
+        .admin-header {
+            background: #1e1b4b;
+        }
+
+        .sidebar-logo {
+            background: #ef4444;
+        }
+    </style>
+</head>
+
+<body data-page="admin-giftcards" data-title="Gift Card Inventory"
+    data-subtitle="Manage supported brands, rates, and offer visibility.">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell" id="app">
+        <!-- Admin Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Loaded via partial -->
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">A</div>
+                <div class="logo-text">CW Admin</div>
+            </div>
+
+            <header class="page-header" id="header">
+                <!-- Loaded via partial -->
+            </header>
+
+
+            <div class="grid">
+
+                <!-- Summary Stats -->
+                <section class="card" style="grid-column: span 2;">
+                    <div class="wallet-stats">
+                        <div class="wallet-stat">
+                            <div class="wallet-stat-label">Total Brands</div>
+                            <div class="wallet-stat-value">24</div>
+                            <div class="wallet-profit">4 Inactive</div>
+                        </div>
+                        <div class="wallet-stat">
+                            <div class="wallet-stat-label">Avg. Buy Rate</div>
+                            <div class="wallet-stat-value">₦ 1,150</div>
+                            <div class="wallet-stat-sub">Per $1 USD</div>
+                        </div>
+                        <div class="wallet-stat">
+                            <div class="wallet-stat-label">Active Offers</div>
+                            <div class="wallet-stat-value">892</div>
+                            <div class="wallet-stat-sub">From 142 sellers</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Rates Table -->
+                <section class="card" style="grid-column: span 2;">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">Brand Rates</div>
+                            <div class="card-subtitle">Base rates for buying gift cards from users.</div>
+                        </div>
+                        <div class="market-filters">
+                            <input type="text" placeholder="Search brands..."
+                                style="background: rgba(15, 23, 42, 0.4); border: 1px solid rgba(148, 163, 184, 0.2); padding: 6px 12px; border-radius: 6px; color: #fff; font-size: 12px; width: 200px;">
+                        </div>
+                    </div>
+
+                    <div class="wallet-history-wrapper">
+                        <table class="tx-table table-dense">
+                            <thead>
+                                <tr>
+                                    <th>Brand</th>
+                                    <th>Category</th>
+                                    <th>Regions</th>
+                                    <th>Rate (NGN/$)</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Brand 1 -->
+                                <tr>
+                                    <td>
+                                        <div class="status-row">
+                                            <span class="avatar"
+                                                style="width: 24px; height: 24px; font-size: 10px; background: #facc15; color: #000;">AM</span>
+                                            <span style="font-weight: 500;">Amazon</span>
+                                        </div>
+                                    </td>
+                                    <td class="muted">E-Commerce</td>
+                                    <td><span class="tier-pill">US</span> <span class="tier-pill">UK</span> <span
+                                            class="tier-pill">DE</span></td>
+                                    <td style="font-weight: 600; color: #4ade80;">1,250</td>
+                                    <td><span class="tag tag-success">Active</span></td>
+                                    <td>
+                                        <button class="btn btn-outline btn-sm"
+                                            style="padding: 2px 8px; font-size: 10px;">Edit Rate</button>
+                                    </td>
+                                </tr>
+
+                                <!-- Brand 2 -->
+                                <tr>
+                                    <td>
+                                        <div class="status-row">
+                                            <span class="avatar"
+                                                style="width: 24px; height: 24px; font-size: 10px; background: #0ea5e9;">ST</span>
+                                            <span style="font-weight: 500;">Steam</span>
+                                        </div>
+                                    </td>
+                                    <td class="muted">Gaming</td>
+                                    <td><span class="tier-pill">Global</span></td>
+                                    <td style="font-weight: 600; color: #4ade80;">1,180</td>
+                                    <td><span class="tag tag-success">Active</span></td>
+                                    <td>
+                                        <button class="btn btn-outline btn-sm"
+                                            style="padding: 2px 8px; font-size: 10px;">Edit Rate</button>
+                                    </td>
+                                </tr>
+
+                                <!-- Brand 3 -->
+                                <tr>
+                                    <td>
+                                        <div class="status-row">
+                                            <span class="avatar"
+                                                style="width: 24px; height: 24px; font-size: 10px; background: #ef4444;">IT</span>
+                                            <span style="font-weight: 500;">iTunes</span>
+                                        </div>
+                                    </td>
+                                    <td class="muted">Music/App</td>
+                                    <td><span class="tier-pill">US</span></td>
+                                    <td style="font-weight: 600; color: #4ade80;">1,100</td>
+                                    <td><span class="tag tag-warning">Paused</span></td>
+                                    <td>
+                                        <button class="btn btn-outline btn-sm"
+                                            style="padding: 2px 8px; font-size: 10px;">Resume</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <div id="footer">
+        <!-- Loaded via partial -->
+    </div>
+
+</body>
+
+</html>

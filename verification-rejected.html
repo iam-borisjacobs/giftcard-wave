@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Verification Failed - Giftcard & Crypto P2P</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/app.js" defer></script>
+</head>
+
+<body data-page="verification">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">G</div>
+                <div>
+                    <div class="sidebar-title">Giftcard Wave</div>
+                    <div class="sidebar-subtitle">Gift card and crypto P2P desk</div>
+                </div>
+            </div>
+
+            <!-- Overview -->
+            <div class="menu-group-label">Overview</div>
+            <ul class="menu">
+                <li>
+                    <a class="menu-item" href="index.html">
+                        <span class="icon">🏠</span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="analytics.html">
+                        <span class="icon">📊</span>
+                        <span>Analytics</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="wallet.html">
+                        <span class="icon">👛</span>
+                        <span>Wallet</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="transactions.html">
+                        <span class="icon">🧾</span>
+                        <span>Transactions</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Finance -->
+            <div class="menu-group-label">Finance</div>
+            <ul class="menu">
+                <li>
+                    <a class="menu-item" href="deposit.html">
+                        <span class="icon">📥</span>
+                        <span>Deposit</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="withdraw.html">
+                        <span class="icon">📤</span>
+                        <span>Withdraw</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="escrow.html">
+                        <span class="icon">🤝</span>
+                        <span>Escrow</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Trading tools menu -->
+            <div class="menu-group-label">Trading tools</div>
+            <ul class="menu">
+                <li>
+                    <a class="menu-item" href="giftcard-offers.html">
+                        <span class="icon">🎁</span>
+                        <span>Gift card offers</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="crypto-p2p.html">
+                        <span class="icon">🪙</span>
+                        <span>Crypto P2P</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="rate-calculator.html">
+                        <span class="icon">🧮</span>
+                        <span>Rate calculator</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="favorites.html">
+                        <span class="icon">⭐</span>
+                        <span>Favorites</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="rate-target.html">
+                        <span class="icon">🎯</span>
+                        <span>Rate target</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="show-love.html">
+                        <span class="icon">❤️</span>
+                        <span>Show love</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- User Settings -->
+            <div class="menu-group-label">User Settings</div>
+            <ul class="menu">
+                <li>
+                    <a class="menu-item active" href="verification.html">
+                        <span class="icon">🛡️</span>
+                        <span>Verification</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="referral.html">
+                        <span class="icon">users</span>
+                        <span>Referrals</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="settings.html">
+                        <span class="icon">⚙️</span>
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="leaderboard.html">
+                        <span class="icon">🏆</span>
+                        <span>Leaderboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="logout.html">
+                        <span class="icon">🚪</span>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">G</div>
+                <div class="logo-text">Giftcard Wave</div>
+            </div>
+            <header class="page-header">
+                <div>
+                    <div class="page-header-title">Verification & Identity</div>
+                    <div class="page-header-sub">
+                        Verify your identity to unlock trading limits and protect your account.
+                    </div>
+                </div>
+
+                <div class="page-header-right">
+                    <span class="chip">
+                        <span class="chip-dot"></span>
+                        Live demo account
+                    </span>
+                    <div class="theme-toggle-container">
+                        <input type="checkbox" id="themeToggle" class="theme-switch">
+                        <label for="themeToggle" class="theme-switch-label"></label>
+                    </div>
+                </div>
+            </header>
+
+
+            <div style="display: flex; flex-direction: column; gap: 18px;">
+
+                <!-- STATUS CARD -->
+                <section class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">Verification status</div>
+                            <div class="card-subtitle">
+                                Your current identity verification state
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="verification-status-row">
+                        <span class="status-badge"
+                            style="background-color: rgba(248, 113, 113, 0.2); color: #f87171;">Verification
+                            Failed</span>
+                        <p class="muted small">
+                            We could not verify your document. The image was too blurry or the details did not match.
+                        </p>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <div class="cta-row">
+                            <button id="retry-verification" class="btn btn-primary"
+                                style="background-color: #f97316; border-color: #f97316; padding-left: 20px; padding-right: 20px;"
+                                onclick="window.location.href='verification-tier1.html'">
+                                Retry Verification
+                            </button>
+                            <span class="muted small">
+                                Please ensure your documents are clear and legible.
+                            </span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- VERIFICATION TIERS -->
+                <section class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">Verification levels</div>
+                            <div class="card-subtitle">
+                                Higher tiers unlock increased limits and features
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="verification-tier-grid">
+
+                        <!-- Tier 0 -->
+                        <div class="verification-tier active">
+                            <div class="tier-top">
+                                <strong>Tier 0</strong>
+                                <span class="tier-pill">Current</span>
+                            </div>
+                            <ul>
+                                <li>View offers only</li>
+                                <li>No trading access</li>
+                                <li>No withdrawals</li>
+                            </ul>
+                        </div>
+
+                        <!-- Tier 1 -->
+                        <div class="verification-tier">
+                            <div class="tier-top">
+                                <strong>Tier 1</strong>
+                                <span style="font-size: 11px; color: #f87171; opacity: 0.9;">Failed</span>
+                            </div>
+                            <ul>
+                                <li>Personal & Contact Details</li>
+                                <li>Government ID Upload</li>
+                                <li>Trade up to NGN 5M</li>
+                            </ul>
+                        </div>
+
+                        <!-- Tier 2 -->
+                        <div class="verification-tier locked">
+                            <div class="tier-top">
+                                <strong>Tier 2</strong>
+                                <!-- icon for locked -->
+                                <span style="font-size: 14px; opacity: 0.5;">🔒</span>
+                            </div>
+                            <ul>
+                                <li>Address Verification</li>
+                                <li>Utility Bill Upload</li>
+                                <li>Unlimited Trading</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+    <footer class="footer">
+        Giftcard and crypto P2P marketplace - Demo environment - © 2025
+    </footer>
+
+    <!-- Modal: Placeholder if needed -->
+    <div id="modal" class="modal-backdrop">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modal-title" class="modal-title">Action</h3>
+            </div>
+            <div id="modal-body" class="modal-body"></div>
+            <div class="modal-actions">
+                <button id="modal-close" class="btn btn-outline btn-sm">Close</button>
+                <button id="modal-confirm" class="btn btn-primary btn-sm">
+                    Confirm
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

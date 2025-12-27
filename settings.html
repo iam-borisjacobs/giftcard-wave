@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Giftcard & Crypto P2P - Settings</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/app.js" defer></script>
+</head>
+
+<body data-page="settings" data-title="Settings" data-subtitle="Manage your profile, security settings, and more.">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell" id="app">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Loaded via partial -->
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">G</div>
+                <div class="logo-text">Giftcard Wave</div>
+            </div>
+
+            <header class="page-header" id="header">
+                <!-- Loaded via partial -->
+            </header>
+
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Profile</div>
+                        <div class="card-subtitle">
+                            Edit your profile details here.
+                        </div>
+                    </div>
+                    <button class="btn btn-outline btn-sm" id="profile-btn">Edit Profile</button>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Security</div>
+                        <div class="card-subtitle">
+                            Manage your security settings here.
+                        </div>
+                    </div>
+                    <button class="btn btn-outline btn-sm" id="security-btn">Edit Security</button>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Identity Verification</div>
+                        <div class="card-subtitle">
+                            Verify your identity to ensure the security of your account.
+                        </div>
+                    </div>
+                    <button class="btn btn-outline btn-sm" id="identity-btn">Verify Identity</button>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Account Deletion</div>
+                        <div class="card-subtitle">
+                            If you wish to delete your account, do it here.
+                        </div>
+                    </div>
+                    <button class="btn btn-outline btn-sm" id="delete-btn">Delete Account</button>
+                </div>
+            </section>
+
+            <!-- Developer Account Section -->
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Developer Account</div>
+                        <div class="card-subtitle">
+                            Manage developer-related settings, such as API access.
+                        </div>
+                    </div>
+                    <button class="btn btn-outline btn-sm" id="developer-btn">Enable Developer Account</button>
+                </div>
+            </section>
+
+            <!-- Developer Account Modal -->
+            <div id="developer-modal" class="modal-backdrop">
+                <div class="modal">
+                    <div class="modal-header">
+                        <h3 id="modal-title">Developer Account Settings</h3>
+                        <button id="modal-close" class="btn btn-outline btn-sm">Close</button>
+                    </div>
+                    <div id="modal-body" class="modal-body">
+                        <p>Enable or disable developer access to this account.</p>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-primary" id="enable-developer">Enable Developer
+                                Account</button>
+                            <button type="button" class="btn btn-danger" id="disable-developer">Disable Developer
+                                Account</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Account Deletion Modal -->
+            <div id="delete-account-modal" class="modal-backdrop">
+                <div class="modal">
+                    <div class="modal-header">
+                        <h3 id="modal-title">Delete Account</h3>
+                        <button id="modal-close" class="btn btn-outline btn-sm">Close</button>
+                    </div>
+                    <div id="modal-body" class="modal-body">
+                        <p>Are you sure you want to delete your account? This action is irreversible.</p>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-danger" id="confirm-delete">Yes, Delete My
+                                Account</button>
+                            <button type="button" class="btn btn-outline" id="cancel-delete">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal for Settings (Common Modal for Profile, Security, Identity, Delete) -->
+            <div id="settings-modal" class="modal-backdrop">
+                <div class="modal">
+                    <div class="modal-header">
+                        <h3 id="modal-title">Settings Details</h3>
+                        <button id="modal-close" class="btn btn-outline btn-sm">Close</button>
+                    </div>
+                    <div id="modal-body" class="modal-body">
+                        <!-- Modal content will be dynamically injected -->
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div id="footer">
+        <!-- Loaded via partial -->
+    </div>
+</body>
+
+</html>

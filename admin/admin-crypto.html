@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Crypto P2P - Giftcard Wave Admin</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <script src="../assets/js/app.js" defer></script>
+    <style>
+        /* Admin Specific Overrides */
+        :root {
+            --sidebar-width: 260px;
+        }
+
+        .admin-header {
+            background: #1e1b4b;
+        }
+
+        .sidebar-logo {
+            background: #ef4444;
+        }
+    </style>
+</head>
+
+<body data-page="admin-crypto" data-title="Crypto P2P Management"
+    data-subtitle="Monitor P2P offers, set fee structures, and manage liquidity.">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell" id="app">
+        <!-- Admin Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Loaded via partial -->
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">A</div>
+                <div class="logo-text">CW Admin</div>
+            </div>
+
+            <header class="page-header" id="header">
+                <!-- Loaded via partial -->
+            </header>
+
+
+            <div class="grid">
+
+                <!-- Crypto Stats -->
+                <section class="card" style="grid-column: span 2;">
+                    <div class="wallet-stats">
+                        <div class="wallet-stat">
+                            <div class="wallet-stat-label">24h Volume</div>
+                            <div class="wallet-stat-value">5.2 BTC</div>
+                            <div class="wallet-profit positive">↑ 8%</div>
+                        </div>
+                        <div class="wallet-stat">
+                            <div class="wallet-stat-label">Active Sellers</div>
+                            <div class="wallet-stat-value">42</div>
+                            <div class="wallet-stat-sub">Online now</div>
+                        </div>
+                        <div class="wallet-stat">
+                            <div class="wallet-stat-label">Global Fee</div>
+                            <div class="wallet-stat-value">0.5%</div>
+                            <div class="wallet-stat-sub">Applied to taker</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Configuration -->
+                <section class="card">
+                    <div class="card-header">
+                        <div class="card-title">Fee Configuration</div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label class="form-label" style="font-size: 13px;">Trading Fee (%)</label>
+                        <div style="display: flex; gap: 8px;">
+                            <input type="number" class="form-input" value="0.5" step="0.1">
+                            <button class="btn btn-primary btn-sm">Update</button>
+                        </div>
+                        <div class="muted small" style="margin-top: 8px;">Fees are deducted from the completed trade
+                            amount in escrow.</div>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <div class="card-header">
+                        <div class="card-title">Asset Status</div>
+                    </div>
+                    <div class="escrow-list">
+                        <div class="escrow-row">
+                            <div class="status-row">
+                                <span class="avatar"
+                                    style="width: 24px; height: 24px; background: #f59e0b; color: 000; font-size: 10px;">₿</span>
+                                <span style="font-weight: 500;">Bitcoin</span>
+                            </div>
+                            <label class="theme-switch-label" style="pointer-events: none; opacity: 1;">Enabled</label>
+                        </div>
+                        <div class="escrow-row">
+                            <div class="status-row">
+                                <span class="avatar"
+                                    style="width: 24px; height: 24px; background: #22c55e; color: #fff; font-size: 10px;">₮</span>
+                                <span style="font-weight: 500;">USDT (TRC20)</span>
+                            </div>
+                            <label class="theme-switch-label" style="pointer-events: none; opacity: 1;">Enabled</label>
+                        </div>
+                        <div class="escrow-row">
+                            <div class="status-row">
+                                <span class="avatar"
+                                    style="width: 24px; height: 24px; background: #3b82f6; color: #fff; font-size: 10px;">E</span>
+                                <span style="font-weight: 500;">Ethereum</span>
+                            </div>
+                            <span class="badge" style="font-size: 10px; opacity: 0.5;">Coming Soon</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Active Offers Table -->
+                <section class="card" style="grid-column: span 2;">
+                    <div class="card-header">
+                        <div class="card-title">Live Market Offers</div>
+                        <div class="market-filters">
+                            <select
+                                style="background: rgba(15, 23, 42, 0.4); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 6px; color: white; padding: 4px 8px;">
+                                <option>All Assets</option>
+                                <option>BTC</option>
+                                <option>USDT</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="wallet-history-wrapper">
+                        <table class="tx-table table-dense">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Type</th>
+                                    <th>Asset</th>
+                                    <th>Price / Rate</th>
+                                    <th>Limits</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Offer 1 -->
+                                <tr>
+                                    <td>
+                                        <div class="status-row">
+                                            <span class="avatar"
+                                                style="width: 24px; height: 24px; font-size: 10px;">JD</span>
+                                            <span>JohnDoe</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="tier-pill" style="background: #22c55e; color: #fff;">SELL</span>
+                                    </td>
+                                    <td>BTC</td>
+                                    <td>₦ 110,500,000</td>
+                                    <td class="small muted">Min: 5k - Max: 500k</td>
+                                    <td><span class="tag tag-success">Online</span></td>
+                                    <td>
+                                        <button class="btn btn-outline btn-sm"
+                                            style="padding: 2px 8px; font-size: 10px;">Flag</button>
+                                    </td>
+                                </tr>
+
+                                <!-- Offer 2 -->
+                                <tr>
+                                    <td>
+                                        <div class="status-row">
+                                            <span class="avatar"
+                                                style="width: 24px; height: 24px; font-size: 10px; background: #fb923c;">MK</span>
+                                            <span>MerchantKing</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="tier-pill" style="background: #ef4444; color: #fff;">BUY</span>
+                                    </td>
+                                    <td>USDT</td>
+                                    <td>₦ 1,450</td>
+                                    <td class="small muted">Min: 100k - Max: 5M</td>
+                                    <td><span class="tag tag-success">Online</span></td>
+                                    <td>
+                                        <button class="btn btn-outline btn-sm"
+                                            style="padding: 2px 8px; font-size: 10px;">Flag</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <div id="footer">
+        <!-- Loaded via partial -->
+    </div>
+
+</body>
+
+</html>

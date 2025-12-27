@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Deposit Funds - Giftcard Wave</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/app.js" defer></script>
+</head>
+
+<body data-page="deposit" data-title="Deposit Funds"
+    data-subtitle="Add funds to your wallet instantly via Bank Transfer or Crypto.">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell" id="app">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Loaded via partial -->
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">G</div>
+                <div class="logo-text">Giftcard Wave</div>
+            </div>
+
+            <!-- Back / Breadcrumb -->
+            <div style="margin-bottom: 16px;">
+                <a href="wallet.html"
+                    style="font-size: 13px; color: var(--muted); display: inline-flex; align-items: center; gap: 4px;">
+                    <span style="font-size: 10px;">◀</span> Back to Wallet
+                </a>
+            </div>
+
+            <header class="page-header" id="header">
+                <!-- Loaded via partial -->
+            </header>
+
+
+            <div class="grid">
+
+                <!-- DEPOSIT FORM -->
+                <section class="card" style="grid-column: span 2;">
+                    <form id="deposit-form-page" action="" method="POST">
+
+                        <h3 class="card-title" style="margin-bottom: 16px;">Select Payment Method</h3>
+
+                        <div class="method-grid">
+                            <label class="method-card active">
+                                <input type="radio" name="method" value="bank_transfer" checked>
+                                <span class="method-icon">🏦</span>
+                                <div class="method-name">Bank Transfer</div>
+                                <div class="method-sub">NGN (Fiat)</div>
+                            </label>
+
+                            <label class="method-card">
+                                <input type="radio" name="method" value="btc">
+                                <span class="method-icon">₿</span>
+                                <div class="method-name">Bitcoin</div>
+                                <div class="method-sub">BTC Network</div>
+                            </label>
+
+                            <label class="method-card">
+                                <input type="radio" name="method" value="usdt">
+                                <span class="method-icon">₮</span>
+                                <div class="method-name">Tether (USDT)</div>
+                                <div class="method-sub">TRC-20</div>
+                            </label>
+                        </div>
+
+                        <hr />
+
+                        <!-- Dynamic Section: Bank Details (Default) -->
+                        <div id="deposit-details-bank" style="margin-top: 24px;">
+                            <div
+                                style="background: rgba(148, 163, 184, 0.05); padding: 16px; border-radius: 12px; border: 1px dashed rgba(148, 163, 184, 0.2);">
+                                <div class="row space-between" style="margin-bottom: 8px;">
+                                    <span class="muted small">Bank Name</span>
+                                    <strong style="font-size: 14px;">Wema Bank</strong>
+                                </div>
+                                <div class="row space-between" style="margin-bottom: 8px;">
+                                    <span class="muted small">Account Name</span>
+                                    <strong style="font-size: 14px;">Giftcard Wave - 982736</strong>
+                                </div>
+                                <div class="row space-between">
+                                    <span class="muted small">Account Number</span>
+                                    <div class="row">
+                                        <strong style="font-size: 16px; letter-spacing: 1px;">0123456789</strong>
+                                        <button type="button" class="btn btn-outline btn-sm"
+                                            style="padding: 2px 8px; font-size: 10px;">COPY</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 24px;">
+                                <label>Amount to Deposit (NGN)</label>
+                                <input type="number" placeholder="Min: 1,000 NGN" min="1000">
+                            </div>
+
+                            <div style="margin-top: 12px; font-size: 12px; color: var(--muted);">
+                                • Transfers are typically credited within 5-10 minutes.<br>
+                                • Please use your unique reference if provided.
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 24px;">
+                            <button type="button" class="btn btn-primary"
+                                style="width: 100%; justify-content: center;">I have made the transfer</button>
+                        </div>
+
+                    </form>
+                </section>
+
+                <!-- Right Side: Recent Deposits -->
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Recent Deposits</div>
+                        </div>
+                        <!-- Reuse escrow-list style for consistency -->
+                        <div class="escrow-list">
+                            <div class="escrow-row">
+                                <div>
+                                    <div style="font-size: 13px; font-weight: 500;">NGN 50,000</div>
+                                    <div class="muted" style="font-size: 11px;">Bank Transfer • Today</div>
+                                </div>
+                                <span class="tag tag-success">Success</span>
+                            </div>
+                            <div class="escrow-row">
+                                <div>
+                                    <div style="font-size: 13px; font-weight: 500;">0.002 BTC</div>
+                                    <div class="muted" style="font-size: 11px;">Crypto • Yesterday</div>
+                                </div>
+                                <span class="tag tag-success">Success</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <div id="footer">
+        <!-- Loaded via partial -->
+    </div>
+
+    <!-- Simple JS to toggle active class on method cards -->
+    <!-- Logic moved to app.js initDeposit() -->
+</body>
+
+</html>

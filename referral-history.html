@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Referral History - Giftcard Wave</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/app.js" defer></script>
+</head>
+
+<body data-page="referral-history" data-title="Referral Earnings"
+    data-subtitle="Detailed history of your referral commissions.">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell" id="app">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Loaded via partial -->
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">G</div>
+                <div class="logo-text">Giftcard Wave</div>
+            </div>
+
+            <!-- Back / Breadcrumb -->
+            <div style="margin-bottom: 16px;">
+                <a href="referral.html"
+                    style="font-size: 13px; color: var(--muted); display: inline-flex; align-items: center; gap: 4px;">
+                    <span style="font-size: 10px;">◀</span> Back to Referral Overview
+                </a>
+            </div>
+
+            <header class="page-header" id="header">
+                <!-- Loaded via partial -->
+            </header>
+
+
+            <div class="grid">
+
+                <!-- HISTORY TABLE -->
+                <section class="card" style="grid-column: span 2;">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">Commissions Log</div>
+                        </div>
+                        <div class="market-filters">
+                            <select>
+                                <option>All Time</option>
+                                <option>This Month</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="wallet-history-wrapper">
+                        <table class="tx-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Referred User</th>
+                                    <th>Action</th>
+                                    <th>Commission</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Oct 20, 2024</td>
+                                    <td>Michael_B</td>
+                                    <td>Trade (Giftcard)</td>
+                                    <td>+ 150 NGN</td>
+                                    <td><span class="tag tag-success">Paid</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Oct 19, 2024</td>
+                                    <td>Sarah_Cards</td>
+                                    <td>Trade (Crypto)</td>
+                                    <td>+ 420 NGN</td>
+                                    <td><span class="tag tag-success">Paid</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Oct 18, 2024</td>
+                                    <td>NewUser_99</td>
+                                    <td>Trade (Giftcard)</td>
+                                    <td>+ 50 NGN</td>
+                                    <td><span class="tag tag-soft">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Oct 15, 2024</td>
+                                    <td>Michael_B</td>
+                                    <td>Trade (Giftcard)</td>
+                                    <td>+ 200 NGN</td>
+                                    <td><span class="tag tag-success">Paid</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <div id="footer">
+        <!-- Loaded via partial -->
+    </div>
+
+</body>
+
+</html>

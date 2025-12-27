@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Giftcard & Crypto P2P - Leaderboard</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/app.js" defer></script>
+</head>
+
+<body data-page="leaderboard" data-title="Leaderboard"
+    data-subtitle="See where you stand and compete with others on the leaderboard.">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell" id="app">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Loaded via partial -->
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">G</div>
+                <div class="logo-text">Giftcard Wave</div>
+            </div>
+
+            <header class="page-header" id="header">
+                <!-- Loaded via partial -->
+            </header>
+
+            <!-- Leaderboard Filters -->
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Leaderboard Filters</div>
+                        <div class="card-subtitle">
+                            Filter by timeframe and criteria.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-col">
+                        <label>Time Period</label>
+                        <select id="leaderboard-timeframe">
+                            <option value="daily">Daily</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="all-time">All Time</option>
+                        </select>
+                    </div>
+
+                    <div class="form-col">
+                        <label>Leaderboard Criteria</label>
+                        <select id="leaderboard-criteria">
+                            <option value="points">Points</option>
+                            <option value="transactions">Transactions</option>
+                            <option value="trades">Trades</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Leaderboard Table -->
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Top 10 Leaderboard</div>
+                        <div class="card-subtitle">
+                            Compete and earn your place among the top.
+                        </div>
+                    </div>
+                </div>
+
+                <div id="leaderboard-list" class="leaderboard-list"></div>
+            </section>
+        </main>
+    </div>
+
+    <div id="footer">
+        <!-- Loaded via partial -->
+    </div>
+</body>
+
+</html>

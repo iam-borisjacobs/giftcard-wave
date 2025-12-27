@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Analytics - Giftcard Wave</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/app.js" defer></script>
+</head>
+
+<body data-page="analytics" data-title="Trading Analytics"
+    data-subtitle="Insights into your trading performance and portfolio growth.">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell" id="app">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Loaded via partial -->
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">G</div>
+                <div class="logo-text">Giftcard Wave</div>
+            </div>
+
+            <!-- Back / Breadcrumb -->
+            <div style="margin-bottom: 16px;">
+                <a href="index.html"
+                    style="font-size: 13px; color: var(--muted); display: inline-flex; align-items: center; gap: 4px;">
+                    <span style="font-size: 10px;">◀</span> Back to Dashboard
+                </a>
+            </div>
+
+            <header class="page-header" id="header">
+                <!-- Loaded via partial -->
+            </header>
+
+
+            <div class="grid">
+
+                <!-- Summary Stats using similar Wallet Card logic -->
+                <section class="card" style="grid-column: span 2;">
+                    <div class="wallet-stats">
+                        <div class="wallet-stat">
+                            <div class="wallet-stat-label">Total Volume (30d)</div>
+                            <div class="wallet-stat-value">NGN 2.4M</div>
+                            <div class="wallet-profit positive">↑ 12% vs last month</div>
+                        </div>
+                        <div class="wallet-stat">
+                            <div class="wallet-stat-label">Successful Trades</div>
+                            <div class="wallet-stat-value">142</div>
+                            <div class="wallet-profit positive">98% Success Rate</div>
+                        </div>
+                        <div class="wallet-stat">
+                            <div class="wallet-stat-label">Avg. Trade Time</div>
+                            <div class="wallet-stat-value">8m 30s</div>
+                            <div class="wallet-stat-sub">Fast Payer Badge</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Main Chart Section -->
+                <section class="card" style="grid-column: span 2;">
+                    <div class="card-header">
+                        <div class="card-title">Volume History</div>
+                        <div class="legend-row" style="margin-bottom: 0;">
+                            <div class="legend-item">
+                                <div class="legend-dot" style="background: var(--accent);"></div>
+                                Gift Cards
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CSS-only Bar Chart -->
+                    <div class="chart-container">
+                        <!-- Bars representing 7 days -->
+                        <div class="bar-wrapper">
+                            <div class="bar" style="height: 40%;"></div>
+                            <div class="bar-label">Mon</div>
+                        </div>
+                        <div class="bar-wrapper">
+                            <div class="bar" style="height: 65%;"></div>
+                            <div class="bar-label">Tue</div>
+                        </div>
+                        <div class="bar-wrapper">
+                            <div class="bar" style="height: 35%;"></div>
+                            <div class="bar-label">Wed</div>
+                        </div>
+                        <div class="bar-wrapper">
+                            <div class="bar" style="height: 85%;"></div>
+                            <div class="bar-label">Thu</div>
+                        </div>
+                        <div class="bar-wrapper">
+                            <div class="bar" style="height: 50%;"></div>
+                            <div class="bar-label">Fri</div>
+                        </div>
+                        <div class="bar-wrapper">
+                            <div class="bar" style="height: 95%;"></div>
+                            <div class="bar-label">Sat</div>
+                        </div>
+                        <div class="bar-wrapper">
+                            <div class="bar" style="height: 60%;"></div>
+                            <div class="bar-label">Sun</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Breakdown Row -->
+                <section class="card">
+                    <div class="card-header">
+                        <div class="card-title">Top Assets</div>
+                    </div>
+
+                    <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 16px;">
+                        <!-- Asset 1 -->
+                        <div>
+                            <div class="row space-between" style="font-size: 13px; margin-bottom: 6px;">
+                                <span>Amazon (US)</span>
+                                <span style="font-weight: 600;">45%</span>
+                            </div>
+                            <div
+                                style="height: 6px; background: rgba(148, 163, 184, 0.1); border-radius: 4px; overflow: hidden;">
+                                <div style="height: 100%; width: 45%; background: #f59e0b;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Asset 2 -->
+                        <div>
+                            <div class="row space-between" style="font-size: 13px; margin-bottom: 6px;">
+                                <span>Steam (UK)</span>
+                                <span style="font-weight: 600;">30%</span>
+                            </div>
+                            <div
+                                style="height: 6px; background: rgba(148, 163, 184, 0.1); border-radius: 4px; overflow: hidden;">
+                                <div style="height: 100%; width: 30%; background: #0ea5e9;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Asset 3 -->
+                        <div>
+                            <div class="row space-between" style="font-size: 13px; margin-bottom: 6px;">
+                                <span>USDT (TRC20)</span>
+                                <span style="font-weight: 600;">25%</span>
+                            </div>
+                            <div
+                                style="height: 6px; background: rgba(148, 163, 184, 0.1); border-radius: 4px; overflow: hidden;">
+                                <div style="height: 100%; width: 25%; background: #22c55e;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <div class="card-header">
+                        <div class="card-title">Performance Metrics</div>
+                    </div>
+
+                    <div class="grid" style="grid-template-columns: 1fr; gap: 12px; margin-top: 12px;">
+                        <div style="background: rgba(148, 163, 184, 0.05); padding: 12px; border-radius: 8px;">
+                            <div class="muted small" style="margin-bottom: 4px;">Dispute Rate</div>
+                            <div style="font-size: 18px; color: #4ade80;">0.5%</div>
+                            <div class="small" style="color: var(--muted);">Based on last 100 trades</div>
+                        </div>
+
+                        <div style="background: rgba(148, 163, 184, 0.05); padding: 12px; border-radius: 8px;">
+                            <div class="muted small" style="margin-bottom: 4px;">Avg. Release Speed</div>
+                            <div style="font-size: 18px;">2 mins</div>
+                            <div class="small" style="color: var(--muted);">Faster than 80% of users</div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+    <div id="footer">
+        <!-- Loaded via partial -->
+    </div>
+</body>
+
+</html>

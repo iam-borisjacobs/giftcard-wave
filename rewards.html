@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Giftcard & Crypto P2P - Rewards</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/app.js" defer></script>
+</head>
+
+<body data-page="rewards" data-title="Rewards"
+    data-subtitle="Earn points through transactions and redeem them for rewards!">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell" id="app">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Loaded via partial -->
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">G</div>
+                <div class="logo-text">Giftcard Wave</div>
+            </div>
+
+            <header class="page-header" id="header">
+                <!-- Loaded via partial -->
+            </header>
+
+            <!-- Rewards Balance Section -->
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Available Balance</div>
+                        <div class="card-subtitle">
+                            You can redeem points for cash or rewards.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rewards-balance">
+                    <div class="rewards-item">
+                        <strong>Points Earned</strong>: <span id="points-earned">0</span>
+                    </div>
+                    <div class="rewards-item">
+                        <strong>Points Redeemed</strong>: <span id="points-redeemed">0</span>
+                    </div>
+                    <div class="rewards-item">
+                        <strong>Points Available</strong>: <span id="points-available">0</span>
+                    </div>
+                </div>
+
+                <div class="rewards-input">
+                    <label for="redeem-points">Enter how many points to redeem</label>
+                    <input type="number" id="redeem-points" placeholder="Enter points" min="1" />
+                    <br>
+                    <br>
+                    <button id="redeem-btn" class="btn btn-primary btn-sm">Redeem</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="footer">
+        <!-- Loaded via partial -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>System Wallets - Giftcard Wave Admin</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <script src="../assets/js/app.js" defer></script>
+    <style>
+        /* Admin Specific Overrides */
+        :root {
+            --sidebar-width: 260px;
+        }
+
+        .admin-header {
+            background: #1e1b4b;
+        }
+
+        .sidebar-logo {
+            background: #ef4444;
+        }
+    </style>
+</head>
+
+<body data-page="admin-wallets" data-title="System Wallets"
+    data-subtitle="Manage company hot wallets and fiat bank accounts.">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell" id="app">
+        <!-- Admin Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Loaded via partial -->
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">A</div>
+                <div class="logo-text">CW Admin</div>
+            </div>
+
+            <header class="page-header" id="header">
+                <!-- Loaded via partial -->
+            </header>
+
+
+            <div class="grid">
+
+                <!-- Summary Stats (Liquidity) -->
+                <section class="card" style="grid-column: span 2;">
+                    <div class="wallet-stats">
+                        <div class="wallet-stat">
+                            <div class="wallet-stat-label">Total Fiat Liquidity</div>
+                            <div class="wallet-stat-value">₦ 145.2M</div>
+                            <div class="wallet-stat-sub">Across 3 Banks</div>
+                        </div>
+                        <div class="wallet-stat">
+                            <div class="wallet-stat-label">Crypto Assets</div>
+                            <div class="wallet-stat-value">$42,500</div>
+                            <div class="wallet-stat-sub">≈ 2.1 BTC total</div>
+                        </div>
+                        <div class="wallet-stat">
+                            <div class="wallet-stat-label">Pending Payouts</div>
+                            <div class="wallet-stat-value" style="color: #f87171;">₦ 2.4M</div>
+                            <div class="wallet-stat-sub">12 txs queued</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Fiat Accounts -->
+                <section class="card">
+                    <div class="card-header">
+                        <div class="card-title">Fiat Accounts (Receive/Send)</div>
+                    </div>
+
+                    <div class="escrow-list">
+                        <!-- Bank 1 -->
+                        <div class="escrow-row">
+                            <div class="status-row">
+                                <span class="avatar"
+                                    style="width: 32px; height: 32px; background: #7e22ce; font-size: 10px;">WEMA</span>
+                                <div>
+                                    <div style="font-weight: 500;">Wema Bank (Main)</div>
+                                    <div class="muted small">012****789 • Auto-Deposit</div>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="font-weight: 600;">₦ 85,000,000</div>
+                                <span class="tag tag-success" style="font-size: 9px;">Active</span>
+                            </div>
+                        </div>
+
+                        <!-- Bank 2 -->
+                        <div class="escrow-row">
+                            <div class="status-row">
+                                <span class="avatar"
+                                    style="width: 32px; height: 32px; background: #c026d3; font-size: 10px;">KUDA</span>
+                                <div>
+                                    <div style="font-weight: 500;">Kuda MFB</div>
+                                    <div class="muted small">202****991 • Manual Payout</div>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="font-weight: 600;">₦ 60,200,400</div>
+                                <span class="tag tag-success" style="font-size: 9px;">Active</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="padding-top: 16px;">
+                        <button class="btn btn-outline btn-sm" style="width: 100%; justify-content: center;">Manage Bank
+                            Integrations</button>
+                    </div>
+                </section>
+
+                <!-- Crypto Wallets -->
+                <section class="card">
+                    <div class="card-header">
+                        <div class="card-title">Crypto Hot Wallets</div>
+                    </div>
+
+                    <div class="escrow-list">
+                        <!-- BTC -->
+                        <div class="escrow-row">
+                            <div class="status-row">
+                                <span class="avatar"
+                                    style="width: 32px; height: 32px; background: #f59e0b; color: #000;">₿</span>
+                                <div>
+                                    <div style="font-weight: 500;">Bitcoin (BTC)</div>
+                                    <div class="muted small">3J98t...k29a • Native</div>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="font-weight: 600;">1.4502 BTC</div>
+                                <div class="muted small">≈ $98,400</div>
+                            </div>
+                        </div>
+
+                        <!-- USDT -->
+                        <div class="escrow-row">
+                            <div class="status-row">
+                                <span class="avatar"
+                                    style="width: 32px; height: 32px; background: #22c55e; color: #fff;">₮</span>
+                                <div>
+                                    <div style="font-weight: 500;">Tether (USDT)</div>
+                                    <div class="muted small">TRC20 • T99a...x882</div>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="font-weight: 600;">24,500 USDT</div>
+                                <div class="muted small">≈ $24,500</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="padding-top: 16px;">
+                        <button class="btn btn-outline btn-sm" style="width: 100%; justify-content: center;">View
+                            Private Keys (Secured)</button>
+                    </div>
+
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <div id="footer">
+        <!-- Loaded via partial -->
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Settings - Giftcard Wave Admin</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <script src="../assets/js/app.js" defer></script>
+    <style>
+        /* Admin Specific Overrides */
+        :root {
+            --sidebar-width: 260px;
+        }
+
+        .admin-header {
+            background: #1e1b4b;
+        }
+
+        .sidebar-logo {
+            background: #ef4444;
+        }
+    </style>
+</head>
+
+<body data-page="admin-settings" data-title="Platform Settings"
+    data-subtitle="Configure global parameters and security.">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell" id="app">
+        <!-- Admin Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Loaded via partial -->
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">A</div>
+                <div class="logo-text">CW Admin</div>
+            </div>
+
+            <header class="page-header" id="header">
+                <!-- Loaded via partial -->
+            </header>
+
+
+            <div class="grid">
+
+                <!-- General Settings -->
+                <section class="card">
+                    <div class="card-header">
+                        <div class="card-title">General Information</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Site Name</label>
+                        <input type="text" class="form-input" value="Giftcard Wave">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Support Email</label>
+                        <input type="email" class="form-input" value="help@giftcardwave.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Maintenance Mode</label>
+                        <div
+                            style="display: flex; align-items: center; gap: 12px; background: rgba(148, 163, 184, 0.05); padding: 12px; border-radius: 8px;">
+                            <label class="theme-switch-container">
+                                <input type="checkbox" class="theme-switch">
+                                <span class="theme-switch-label"></span>
+                            </label>
+                            <span class="muted small">If enabled, only admins can access the site.</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Security -->
+                <section class="card">
+                    <div class="card-header">
+                        <div class="card-title">Security & Limits</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Max Daily Withdrawal (Tier 1)</label>
+                        <input type="number" class="form-input" value="500000">
+                        <div class="muted small" style="margin-top: 4px;">In NGN</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Max Daily Withdrawal (Tier 2)</label>
+                        <input type="number" class="form-input" value="5000000">
+                        <div class="muted small" style="margin-top: 4px;">In NGN</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Force 2FA for Admins</label>
+                        <div
+                            style="display: flex; align-items: center; gap: 12px; background: rgba(148, 163, 184, 0.05); padding: 12px; border-radius: 8px;">
+                            <label class="theme-switch-container">
+                                <input type="checkbox" class="theme-switch" checked>
+                                <span class="theme-switch-label"></span>
+                            </label>
+                            <span class="muted small">Recommended for security.</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Notifications -->
+                <section class="card" style="grid-column: span 2;">
+                    <div class="card-header">
+                        <div class="card-title">System Notifications</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Global Announcement (Banner)</label>
+                        <input type="text" class="form-input"
+                            placeholder="Enter message to display at top of user dashboard...">
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <div id="footer">
+        <!-- Loaded via partial -->
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Level 1 Verification - Giftcard Wave</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/app.js" defer></script>
+</head>
+
+<body data-page="verification-tier1">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">G</div>
+                <div>
+                    <div class="sidebar-title">Giftcard Wave</div>
+                    <div class="sidebar-subtitle">Gift card and crypto P2P desk</div>
+                </div>
+            </div>
+
+            <!-- Overview -->
+            <div class="menu-group-label">Overview</div>
+            <ul class="menu">
+                <li>
+                    <a class="menu-item" href="index.html">
+                        <span class="icon">🏠</span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="analytics.html">
+                        <span class="icon">📊</span>
+                        <span>Analytics</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="wallet.html">
+                        <span class="icon">👛</span>
+                        <span>Wallet</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="transactions.html">
+                        <span class="icon">🧾</span>
+                        <span>Transactions</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Finance -->
+            <div class="menu-group-label">Finance</div>
+            <ul class="menu">
+                <li>
+                    <a class="menu-item" href="deposit.html">
+                        <span class="icon">📥</span>
+                        <span>Deposit</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="withdraw.html">
+                        <span class="icon">📤</span>
+                        <span>Withdraw</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="escrow.html">
+                        <span class="icon">🤝</span>
+                        <span>Escrow</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Trading tools menu -->
+            <div class="menu-group-label">Trading tools</div>
+            <ul class="menu">
+                <li>
+                    <a class="menu-item" href="giftcard-offers.html">
+                        <span class="icon">🎁</span>
+                        <span>Gift card offers</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="crypto-p2p.html">
+                        <span class="icon">🪙</span>
+                        <span>Crypto P2P</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="rate-calculator.html">
+                        <span class="icon">🧮</span>
+                        <span>Rate calculator</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="favorites.html">
+                        <span class="icon">⭐</span>
+                        <span>Favorites</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="rate-target.html">
+                        <span class="icon">🎯</span>
+                        <span>Rate target</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="show-love.html">
+                        <span class="icon">❤️</span>
+                        <span>Show love</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- User Settings -->
+            <div class="menu-group-label">User Settings</div>
+            <ul class="menu">
+                <li>
+                    <a class="menu-item" href="verification.html">
+                        <span class="icon">🛡️</span>
+                        <span>Verification</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="referral.html">
+                        <span class="icon">users</span>
+                        <span>Referrals</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="rewards.html">
+                        <span class="icon">🏅</span>
+                        <span>Rewards</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="settings.html">
+                        <span class="icon">⚙️</span>
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="leaderboard.html">
+                        <span class="icon">🏆</span>
+                        <span>Leaderboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="logout.html">
+                        <span class="icon">🚪</span>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">G</div>
+                <div class="logo-text">Giftcard Wave</div>
+            </div>
+
+            <!-- Back / Breadcrumb -->
+            <div style="margin-bottom: 16px;">
+                <a href="verification.html"
+                    style="font-size: 13px; color: var(--muted); display: inline-flex; align-items: center; gap: 4px;">
+                    <span style="font-size: 10px;">◀</span> Back to Overview
+                </a>
+            </div>
+
+            <header class="page-header">
+                <div>
+                    <div class="page-header-title">Level 1 Verification</div>
+                    <div class="page-header-sub">
+                        Provide your basic personal information and a valid ID.
+                    </div>
+                </div>
+
+                <div class="page-header-right">
+                    <span class="chip">
+                        <span class="chip-dot"></span>
+                        Live demo account
+                    </span>
+                    <div class="theme-toggle-container">
+                        <input type="checkbox" id="themeToggle" class="theme-switch">
+                        <label for="themeToggle" class="theme-switch-label"></label>
+                    </div>
+                </div>
+            </header>
+
+
+            <div class="grid">
+
+                <!-- FORM COLUMN -->
+                <section class="card" style="grid-column: span 2;">
+                    <form id="tier1-form" action="" method="POST" enctype="multipart/form-data">
+
+                        <h3 class="card-title" style="margin-bottom: 16px;">Personal Information</h3>
+
+                        <div class="form-row" style="margin-bottom: 16px;">
+                            <div class="form-col">
+                                <label>First Name</label>
+                                <input type="text" name="first_name" placeholder="E.g. John" required>
+                            </div>
+                            <div class="form-col">
+                                <label>Last Name</label>
+                                <input type="text" name="last_name" placeholder="E.g. Doe" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row" style="margin-bottom: 24px;">
+                            <div class="form-col">
+                                <label>Date of Birth</label>
+                                <input type="date" name="dob" required>
+                            </div>
+                            <div class="form-col">
+                                <label>Nationality</label>
+                                <select name="nationality">
+                                    <option value="NG">Nigeria</option>
+                                    <option value="GH">Ghana</option>
+                                    <option value="KE">Kenya</option>
+                                    <option value="ZA">South Africa</option>
+                                    <option value="US">United States</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <h3 class="card-title" style="margin-bottom: 8px; margin-top: 24px;">Government ID</h3>
+                        <p class="muted small" style="margin-bottom: 16px;">
+                            Upload a clear picture of your National ID, Passport, or Driver's License.
+                        </p>
+
+                        <div class="form-row" style="margin-bottom: 16px;">
+                            <div class="form-col">
+                                <label>Document Type</label>
+                                <select name="doc_type">
+                                    <option value="nin">National ID (NIN Slip)</option>
+                                    <option value="passport">International Passport</option>
+                                    <option value="drivers_license">Driver's License</option>
+                                </select>
+                            </div>
+                            <div class="form-col">
+                                <label>ID Number</label>
+                                <input type="text" name="doc_number" placeholder="Enter ID number" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label>Front of ID</label>
+                                <div class="upload-zone">
+                                    <input type="file" name="doc_front" accept="image/*" required>
+                                    <span class="upload-icon">📷</span>
+                                    <div class="upload-text">Click to upload</div>
+                                    <div class="upload-sub">JPG, PNG or PDF (Max 5MB)</div>
+                                </div>
+                            </div>
+                            <div class="form-col">
+                                <label>Back of ID (Optional)</label>
+                                <div class="upload-zone">
+                                    <input type="file" name="doc_back" accept="image/*">
+                                    <span class="upload-icon">📄</span>
+                                    <div class="upload-text">Click to upload</div>
+                                    <div class="upload-sub">If applicable</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 32px; display: flex; justify-content: flex-end;">
+                            <button type="submit" class="btn btn-primary"
+                                style="padding-left: 32px; padding-right: 32px;">
+                                Submit for verification
+                            </button>
+                        </div>
+
+                    </form>
+                </section>
+
+            </div>
+        </main>
+    </div>
+    <footer class="footer">
+        Giftcard and crypto P2P marketplace - Demo environment - © 2025
+    </footer>
+
+</body>
+
+</html>

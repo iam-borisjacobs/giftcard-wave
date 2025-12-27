@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Giftcard & Crypto P2P - Show Love</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/app.js" defer></script>
+</head>
+
+<body data-page="show-love" data-title="Show Love"
+    data-subtitle="Express your appreciation for offers, users, or features.">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell" id="app">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Loaded via partial -->
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">G</div>
+                <div class="logo-text">Giftcard Wave</div>
+            </div>
+
+            <header class="page-header" id="header">
+                <!-- Loaded via partial -->
+            </header>
+
+            <!-- Show Love Form -->
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Show Love</div>
+                        <div class="card-subtitle">
+                            Choose an offer or user to show love to.
+                        </div>
+                    </div>
+                </div>
+
+                <form id="show-love-form">
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label>Recipient</label>
+                            <input id="love-recipient" placeholder="Enter an offer ID or user" required />
+                        </div>
+
+                        <div class="form-col">
+                            <label>Message</label>
+                            <textarea id="love-message" rows="3" placeholder="Write your message (optional)"></textarea>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 8px; text-align: center;">
+                        <button type="submit" class="btn btn-primary btn-sm">
+                            Show Love
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Love History Section -->
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Your Show Love History</div>
+                        <div class="card-subtitle">
+                            View the history of all the times you've shown love.
+                        </div>
+                    </div>
+                </div>
+
+                <div id="love-history-list" class="love-history-grid"></div>
+                <div id="no-love-history" class="muted small" style="margin-top:8px">
+                    You haven't shown any love yet. Show some love now!
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="footer">
+        <!-- Loaded via partial -->
+    </div>
+</body>
+
+</html>

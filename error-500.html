@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Giftcard Wave – Something went wrong</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/app.js" defer></script>
+</head>
+
+<body class="error-layout" data-page="error-500">
+    <div class="error-wrapper">
+        <div class="error-card">
+            <div class="error-chip error-chip-warn">Error 500</div>
+
+            <div class="error-code">500</div>
+            <h1 class="error-title">Something went wrong</h1>
+            <p class="error-subtitle">
+                Our engine hit an unexpected error. Your request could not be completed.
+            </p>
+
+            <div class="error-actions">
+                <button type="button" class="btn btn-primary error-btn-main" onclick="window.location.reload()">
+                    Try again
+                </button>
+                <a href="index.html" class="btn btn-outline error-btn-secondary">
+                    Go to dashboard
+                </a>
+            </div>
+
+            <p class="error-meta small muted">
+                If the problem persists, please try again later or contact support.
+            </p>
+        </div>
+
+        <footer class="error-footer small muted">
+            Giftcard and crypto P2P marketplace &mdash; Demo environment &mdash; © 2025
+        </footer>
+    </div>
+</body>
+
+</html>

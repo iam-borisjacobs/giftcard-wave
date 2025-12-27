@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>User Management - Giftcard Wave Admin</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <script src="../assets/js/app.js" defer></script>
+    <style>
+        /* Admin Specific Overrides */
+        :root {
+            --sidebar-width: 260px;
+        }
+
+        .admin-header {
+            background: #1e1b4b;
+        }
+
+        .sidebar-logo {
+            background: #ef4444;
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 200px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            padding: 10px 16px;
+            border-radius: 8px;
+            color: #fff;
+            outline: none;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent);
+        }
+
+        .filter-select {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            padding: 0 16px;
+            border-radius: 8px;
+            color: #fff;
+            height: 42px;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body data-page="admin-users" data-title="User Management" data-subtitle="View, edit, and manage all platform users.">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell" id="app">
+        <!-- Admin Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Loaded via partial -->
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">A</div>
+                <div class="logo-text">CW Admin</div>
+            </div>
+
+            <header class="page-header" id="header">
+                <!-- Loaded via partial -->
+            </header>
+
+
+            <div class="grid">
+
+                <section class="card" style="grid-column: span 2;">
+
+                    <!-- Filter Bar -->
+                    <div class="filter-bar">
+                        <input type="text" class="search-input" placeholder="Search by name, email, or user ID...">
+                        <select class="filter-select">
+                            <option value="all">All Status</option>
+                            <option value="active">Active</option>
+                            <option value="banned">Banned</option>
+                            <option value="pending">Pending KYC</option>
+                        </select>
+                        <select class="filter-select">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="balance">Highest Balance</option>
+                        </select>
+                    </div>
+
+                    <div class="wallet-history-wrapper">
+                        <table class="tx-table table-dense">
+                            <thead>
+                                <tr>
+                                    <th>User (ID)</th>
+                                    <th>Email</th>
+                                    <th>Verification</th>
+                                    <th>Wallet Bal.</th>
+                                    <th>Joined</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="status-row">
+                                            <span class="avatar"
+                                                style="width: 24px; height: 24px; font-size: 10px;">JD</span>
+                                            <span>John Doe (883)</span>
+                                        </div>
+                                    </td>
+                                    <td class="muted">john@example.com</td>
+                                    <td><span class="tier-pill" style="background: #22c55e;">Tier 2</span></td>
+                                    <td>₦ 450,200</td>
+                                    <td class="muted">Oct 24, 2024</td>
+                                    <td><span class="tag tag-success">Active</span></td>
+                                    <td>
+                                        <button class="btn btn-outline btn-sm"
+                                            style="padding: 2px 8px; font-size: 10px;">Edit</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="status-row">
+                                            <span class="avatar"
+                                                style="width: 24px; height: 24px; font-size: 10px; background: #a855f7;">SJ</span>
+                                            <span>Sarah J (889)</span>
+                                        </div>
+                                    </td>
+                                    <td class="muted">sarah.j@test.com</td>
+                                    <td><span class="tier-pill">Tier 1</span></td>
+                                    <td>₦ 12,500</td>
+                                    <td class="muted">Oct 23, 2024</td>
+                                    <td><span class="tag tag-success">Active</span></td>
+                                    <td>
+                                        <button class="btn btn-outline btn-sm"
+                                            style="padding: 2px 8px; font-size: 10px;">Edit</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="status-row">
+                                            <span class="avatar"
+                                                style="width: 24px; height: 24px; font-size: 10px; background: #fb923c;">BM</span>
+                                            <span>BigMike (901)</span>
+                                        </div>
+                                    </td>
+                                    <td class="muted">mike@scam.net</td>
+                                    <td><span class="tier-pill"
+                                            style="background: var(--muted); color: #fff;">Unverified</span></td>
+                                    <td>₦ 0.00</td>
+                                    <td class="muted">Oct 22, 2024</td>
+                                    <td><span class="tag tag-danger">Banned</span></td>
+                                    <td>
+                                        <button class="btn btn-outline btn-sm"
+                                            style="padding: 2px 8px; font-size: 10px;">Unban</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="status-row">
+                                            <span class="avatar"
+                                                style="width: 24px; height: 24px; font-size: 10px;">AX</span>
+                                            <span>AlexCrypto (772)</span>
+                                        </div>
+                                    </td>
+                                    <td class="muted">alex@crypto.io</td>
+                                    <td><span class="tier-pill" style="background: #fb923c;">Pending</span></td>
+                                    <td>₦ 1,200,000</td>
+                                    <td class="muted">Oct 20, 2024</td>
+                                    <td><span class="tag tag-warning">Restricted</span></td>
+                                    <td>
+                                        <button class="btn btn-outline btn-sm"
+                                            style="padding: 2px 8px; font-size: 10px;">Review</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div style="display: flex; justify-content: center; gap: 8px; margin-top: 24px;">
+                        <button class="btn btn-outline btn-sm" disabled>Previous</button>
+                        <button class="btn btn-primary btn-sm">1</button>
+                        <button class="btn btn-outline btn-sm">2</button>
+                        <button class="btn btn-outline btn-sm">3</button>
+                        <button class="btn btn-outline btn-sm">Next</button>
+                    </div>
+
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <div id="footer">
+        <!-- Loaded via partial -->
+    </div>
+
+</body>
+
+</html>

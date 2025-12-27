@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>KYC Requests - Giftcard Wave Admin</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <script src="../assets/js/app.js" defer></script>
+    <style>
+        /* Admin Specific Overrides */
+        :root {
+            --sidebar-width: 260px;
+        }
+
+        .admin-header {
+            background: #1e1b4b;
+        }
+
+        .sidebar-logo {
+            background: #ef4444;
+        }
+
+        /* Document Preview Thumbnail */
+        .doc-preview {
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            object-fit: cover;
+            background: #334155;
+            cursor: pointer;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+        }
+
+        .doc-preview:hover {
+            border-color: var(--accent);
+        }
+    </style>
+</head>
+
+<body data-page="admin-verification" data-title="KYC Requests"
+    data-subtitle="Review and approve user identification documents.">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell" id="app">
+        <!-- Admin Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Loaded via partial -->
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">A</div>
+                <div class="logo-text">CW Admin</div>
+            </div>
+
+            <header class="page-header" id="header">
+                <!-- Loaded via partial -->
+            </header>
+
+
+            <div class="grid">
+
+                <!-- PENDING REQUESTS -->
+                <section class="card" style="grid-column: span 2;">
+                    <div class="card-header">
+                        <div class="card-title">Pending Applications</div>
+                    </div>
+
+                    <div class="wallet-history-wrapper">
+                        <table class="tx-table">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Level</th>
+                                    <th>Submitted</th>
+                                    <th>Documents</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Request 1 -->
+                                <tr>
+                                    <td>
+                                        <div class="status-row">
+                                            <span class="avatar"
+                                                style="width: 32px; height: 32px; font-size: 12px;">SJ</span>
+                                            <div>
+                                                <div style="font-weight: 500;">Sarah Jenkins</div>
+                                                <div class="muted small">sarah.j@gmail.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="tier-pill">Tier 1</span></td>
+                                    <td class="muted" style="font-size: 12px;">2 hours ago</td>
+                                    <td>
+                                        <div style="display: flex; gap: 8px;">
+                                            <!-- Placeholders for doc thumbnails -->
+                                            <div class="doc-preview"></div>
+                                            <div class="doc-preview"></div>
+                                        </div>
+                                        <div class="muted small" style="margin-top: 4px;">Passport</div>
+                                    </td>
+                                    <td>
+                                        <div style="display: flex; gap: 8px;">
+                                            <button class="btn btn-primary btn-sm"
+                                                style="background: #22c55e; border-color: #22c55e;">Approve</button>
+                                            <button class="btn btn-outline btn-sm"
+                                                style="color: #ef4444; border-color: rgba(239, 68, 68, 0.5);">Reject</button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <!-- Request 2 -->
+                                <tr>
+                                    <td>
+                                        <div class="status-row">
+                                            <span class="avatar"
+                                                style="width: 32px; height: 32px; font-size: 12px; background: #fb923c;">MK</span>
+                                            <div>
+                                                <div style="font-weight: 500;">Mike K.</div>
+                                                <div class="muted small">m.king@yahoo.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="tier-pill" style="background: #fb923c;">Tier 2</span></td>
+                                    <td class="muted" style="font-size: 12px;">5 hours ago</td>
+                                    <td>
+                                        <div style="display: flex; gap: 8px;">
+                                            <div class="doc-preview"></div>
+                                        </div>
+                                        <div class="muted small" style="margin-top: 4px;">Utility Bill</div>
+                                    </td>
+                                    <td>
+                                        <div style="display: flex; gap: 8px;">
+                                            <button class="btn btn-primary btn-sm"
+                                                style="background: #22c55e; border-color: #22c55e;">Approve</button>
+                                            <button class="btn btn-outline btn-sm"
+                                                style="color: #ef4444; border-color: rgba(239, 68, 68, 0.5);">Reject</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </section>
+
+
+                <!-- RECENTLY PROCESSED -->
+                <section class="card" style="grid-column: span 2; opacity: 0.8;">
+                    <div class="card-header">
+                        <div class="card-title">Recently Processed</div>
+                    </div>
+                    <div class="wallet-history-wrapper">
+                        <table class="tx-table table-dense">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Level</th>
+                                    <th>Processed By</th>
+                                    <th>Result</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>David O.</td>
+                                    <td>Tier 1</td>
+                                    <td class="muted">Admin_01</td>
+                                    <td><span class="tag tag-success">Approved</span></td>
+                                    <td class="muted">Yesterday</td>
+                                </tr>
+                                <tr>
+                                    <td>FakeUser99</td>
+                                    <td>Tier 2</td>
+                                    <td class="muted">Admin_01</td>
+                                    <td><span class="tag tag-danger">Rejected</span></td>
+                                    <td class="muted">Yesterday</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <div id="footer">
+        <!-- Loaded via partial -->
+    </div>
+
+    <!-- Page Specific Script for Demo Interactivity -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select all rows in the pending table (first card)
+            const pendingParams = document.querySelectorAll('.card:nth-of-type(1) tbody tr');
+            const processedTableBody = document.querySelector('.card:nth-of-type(2) tbody');
+
+            // Counter elements
+            const headerChip = document.querySelector('.page-header-right .chip');
+            const sidebarChip = document.querySelector('.menu-item.active .chip');
+
+            // Function to update counts
+            const updateCounts = () => {
+                const count = document.querySelectorAll('.card:nth-of-type(1) tbody tr').length;
+                if (headerChip) headerChip.textContent = `${count} Pending Reviews`;
+                if (sidebarChip) sidebarChip.textContent = count;
+
+                // Hide pending table if empty
+                if (count === 0) {
+                    const pendingCardEmpty = document.querySelector('.card:nth-of-type(1) .card-header');
+                    // Optional: Add empty state message
+                }
+            };
+
+            // Attach event listeners to buttons
+            document.addEventListener('click', function (e) {
+                // Check if click is on an approve or reject button
+                if (e.target.matches('button.btn-primary') && e.target.textContent.trim() === 'Approve') {
+                    handleAction(e.target, 'Approved');
+                } else if (e.target.matches('button.btn-outline') && e.target.textContent.trim() === 'Reject') {
+                    handleAction(e.target, 'Rejected');
+                }
+            });
+
+            function handleAction(button, status) {
+                const row = button.closest('tr');
+                if (!row) return;
+
+                // Extract data from the row
+                const userCell = row.cells[0];
+                const userNameWrapper = userCell.querySelector('div[style*="font-weight: 500;"]');
+                const userName = userNameWrapper ? userNameWrapper.textContent.trim() : 'Unknown User';
+
+                const levelCell = row.cells[1];
+                const levelHtml = levelCell.innerHTML; // Keep the pill styling
+
+                // Visual feedback (fade out)
+                row.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                row.style.opacity = '0';
+                row.style.transform = 'translateX(20px)';
+
+                setTimeout(() => {
+                    // Remove from pending
+                    row.remove();
+                    updateCounts();
+
+                    // Create new row for processed table
+                    const newRow = document.createElement('tr');
+                    newRow.style.animation = 'fadeIn 0.5s ease';
+
+                    // Determine badge class
+                    const badgeClass = status === 'Approved' ? 'tag-success' : 'tag-danger';
+
+                    newRow.innerHTML = `
+                        <td>${userName}</td>
+                        <td>${levelHtml}</td>
+                        <td class="muted">Admin (You)</td>
+                        <td><span class="tag ${badgeClass}">${status}</span></td>
+                        <td class="muted">Just now</td>
+                    `;
+
+                    // Add to top of processed table
+                    processedTableBody.insertBefore(newRow, processedTableBody.firstChild);
+
+                }, 300);
+            }
+
+            // Add Styles for tags if missing (defensive)
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes fadeIn {
+                    from { opacity: 0; transform: translateY(-10px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                .tag {
+                    display: inline-block;
+                    padding: 4px 8px;
+                    border-radius: 4px;
+                    font-size: 11px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                }
+                .tag-success { background: rgba(34, 197, 94, 0.2); color: #22c55e; }
+                .tag-danger { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+
+</html>

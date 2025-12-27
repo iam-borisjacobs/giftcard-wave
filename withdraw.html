@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Withdraw Funds - Giftcard Wave</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/app.js" defer></script>
+</head>
+
+<body data-page="withdraw" data-title="Withdraw Funds"
+    data-subtitle="Withdraw your available balance to a bank account or crypto wallet.">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell" id="app">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Loaded via partial -->
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">G</div>
+                <div class="logo-text">Giftcard Wave</div>
+            </div>
+
+            <!-- Back / Breadcrumb -->
+            <div style="margin-bottom: 16px;">
+                <a href="wallet.html"
+                    style="font-size: 13px; color: var(--muted); display: inline-flex; align-items: center; gap: 4px;">
+                    <span style="font-size: 10px;">◀</span> Back to Wallet
+                </a>
+            </div>
+
+            <header class="page-header" id="header">
+                <!-- Loaded via partial -->
+            </header>
+
+
+            <div class="grid">
+
+                <!-- WITHDRAWFORM -->
+                <section class="card" style="grid-column: span 2;">
+                    <form id="withdraw-form-page" action="" method="POST">
+
+                        <h3 class="card-title" style="margin-bottom: 16px;">Select Withdrawal Method</h3>
+
+                        <div class="method-grid">
+                            <label class="method-card active">
+                                <input type="radio" name="method" value="bank_transfer" checked>
+                                <span class="method-icon">🏦</span>
+                                <div class="method-name">Bank Account</div>
+                                <div class="method-sub">NGN (Fiat)</div>
+                            </label>
+
+                            <label class="method-card">
+                                <input type="radio" name="method" value="btc">
+                                <span class="method-icon">₿</span>
+                                <div class="method-name">Bitcoin</div>
+                                <div class="method-sub">BTC Address</div>
+                            </label>
+
+                            <label class="method-card">
+                                <input type="radio" name="method" value="usdt">
+                                <span class="method-icon">₮</span>
+                                <div class="method-name">Tether (USDT)</div>
+                                <div class="method-sub">TRC-20 Address</div>
+                            </label>
+                        </div>
+
+                        <hr />
+
+                        <!-- Withdrawal Details -->
+                        <div style="margin-top: 24px;">
+
+                            <div class="form-row" style="margin-bottom: 16px;">
+                                <div class="form-col">
+                                    <label>Destination Account / Address</label>
+                                    <input type="text" placeholder="Enter Account Number or Wallet Address" required>
+                                </div>
+                            </div>
+
+                            <!-- Bank Selection (Only if Bank is selected - simplified for demo) -->
+                            <div class="form-row" style="margin-bottom: 16px;">
+                                <div class="form-col">
+                                    <label>Bank Name (If Bank Transfer)</label>
+                                    <select>
+                                        <option value="">Select Bank</option>
+                                        <option value="access">Access Bank</option>
+                                        <option value="gtb">GTBank</option>
+                                        <option value="zenith">Zenith Bank</option>
+                                        <option value="opay">OPay</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row" style="margin-bottom: 24px;">
+                                <div class="form-col">
+                                    <label>Amount (NGN)</label>
+                                    <input type="number" id="withdraw-amount" placeholder="0.00" min="1000">
+                                </div>
+                            </div>
+
+                            <!-- Fee Summary Box -->
+                            <div
+                                style="background: rgba(15, 23, 42, 0.4); border: 1px solid rgba(148, 163, 184, 0.15); border-radius: 12px; padding: 14px;">
+                                <div class="row space-between" style="font-size: 13px; margin-bottom: 6px;">
+                                    <span class="muted">Withdrawal Amount</span>
+                                    <span id="summary-amount">0.00 NGN</span>
+                                </div>
+                                <div class="row space-between" style="font-size: 13px; margin-bottom: 6px;">
+                                    <span class="muted">Processing Fee (1.5%)</span>
+                                    <span id="summary-fee" style="color: #fb923c;">0.00 NGN</span>
+                                </div>
+                                <hr style="margin: 8px 0;" />
+                                <div class="row space-between" style="font-size: 14px; font-weight: 600;">
+                                    <span>Total Deducted</span>
+                                    <span id="summary-total">0.00 NGN</span>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 24px;">
+                                <!-- Withdrawal Limit Notice -->
+                                <div
+                                    style="font-size: 12px; color: var(--muted); margin-bottom: 12px; text-align: center;">
+                                    Your current daily withdrawal limit is <strong style="color: #e5e7eb;">NGN
+                                        5,000,000</strong> based on your <a href="verification.html"
+                                        style="color: var(--accent);">Level 1 Verification</a>.
+                                </div>
+
+                                <button type="submit" class="btn btn-primary"
+                                    style="width: 100%; justify-content: center;">Confirm Withdrawal</button>
+                            </div>
+
+                        </div>
+
+                    </form>
+                </section>
+
+                <!-- Right Side: Recent Withdrawals -->
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Recent Withdrawals</div>
+                        </div>
+                        <!-- Reuse escrow-list style for consistency -->
+                        <div class="escrow-list">
+                            <div class="escrow-row">
+                                <div>
+                                    <div style="font-size: 13px; font-weight: 500;">NGN 10,000</div>
+                                    <div class="muted" style="font-size: 11px;">Bank Transfer • Yesterday</div>
+                                </div>
+                                <span class="tag tag-soft">Processing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <div id="footer">
+        <!-- Loaded via partial -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Toggle Active Method
+            const cards = document.querySelectorAll('.method-card');
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    cards.forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
+                });
+            });
+
+            // Simple Fee Calc Demo
+            const amountInput = document.getElementById('withdraw-amount');
+            const summaryAmount = document.getElementById('summary-amount');
+            const summaryFee = document.getElementById('summary-fee');
+            const summaryTotal = document.getElementById('summary-total');
+
+            if (amountInput) {
+                amountInput.addEventListener('input', (e) => {
+                    const val = parseFloat(e.target.value) || 0;
+                    const fee = val * 0.015; // 1.5%
+                    const total = val + fee;
+
+                    summaryAmount.textContent = val.toLocaleString() + " NGN";
+                    summaryFee.textContent = fee.toLocaleString() + " NGN";
+                    summaryTotal.textContent = total.toLocaleString() + " NGN";
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Giftcard & Crypto P2P - Rate Target</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/app.js" defer></script>
+</head>
+
+<body data-page="rate-target" data-title="Rate Target"
+    data-subtitle="Set a target exchange rate and get notified when it’s reached.">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell" id="app">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Loaded via partial -->
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">G</div>
+                <div class="logo-text">Giftcard Wave</div>
+            </div>
+
+            <header class="page-header" id="header">
+                <!-- Loaded via partial -->
+            </header>
+
+            <!-- Set Target Section -->
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Set Target Rate</div>
+                        <div class="card-subtitle">
+                            Set your desired rate for currency pairs.
+                        </div>
+                    </div>
+                </div>
+
+                <form id="set-target-form">
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label>Base Currency</label>
+                            <select id="target-base-currency">
+                                <option value="NGN">NGN (Naira)</option>
+                                <option value="BTC">BTC (Bitcoin)</option>
+                                <option value="USDT">USDT (Tether)</option>
+                                <option value="ETH">ETH (Ethereum)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-col">
+                            <label>Target Currency</label>
+                            <select id="target-target-currency">
+                                <option value="BTC">BTC (Bitcoin)</option>
+                                <option value="NGN">NGN (Naira)</option>
+                                <option value="USDT">USDT (Tether)</option>
+                                <option value="ETH">ETH (Ethereum)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label>Target Rate</label>
+                            <input id="target-rate" type="number" min="0.0001" step="0.0001"
+                                placeholder="Set target rate" />
+                        </div>
+
+                        <div class="form-col">
+                            <label>Amount</label>
+                            <input id="target-amount" type="number" min="1" step="1" placeholder="Enter amount" />
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 8px; text-align: center;">
+                        <button type="submit" class="btn btn-primary btn-sm">
+                            Set Target
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Active Targets List -->
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Active Rate Targets</div>
+                        <div class="card-subtitle">
+                            Track your active target rates.
+                        </div>
+                    </div>
+                </div>
+
+                <div id="active-targets-list" class="targets-grid"></div>
+                <div id="no-active-targets" class="muted small" style="margin-top:8px">
+                    You don't have any active rate targets yet.
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="footer">
+        <!-- Loaded via partial -->
+    </div>
+</body>
+
+</html>

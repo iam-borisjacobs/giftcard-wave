@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Giftcard & Crypto P2P - Transactions</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/app.js" defer></script>
+</head>
+
+<body data-page="transactions" data-title="Transaction History"
+    data-subtitle="View all your transactions: deposits, withdrawals, trades, and more.">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell" id="app">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Loaded via partial -->
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">G</div>
+                <div class="logo-text">Giftcard Wave</div>
+            </div>
+
+            <header class="page-header" id="header">
+                <!-- Loaded via partial -->
+            </header>
+
+            <!-- Transaction filter section -->
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Filters</div>
+                        <div class="card-subtitle">
+                            Filter by transaction type or status.
+                        </div>
+                    </div>
+                </div>
+                <div class="transaction-filters">
+                    <select id="filter-type">
+                        <option value="all">All transactions</option>
+                        <option value="deposit">Deposits</option>
+                        <option value="withdrawal">Withdrawals</option>
+                        <option value="transfer">Transfers</option>
+                        <option value="escrow">Escrows</option>
+                    </select>
+                    <select id="filter-status">
+                        <option value="all">All statuses</option>
+                        <option value="completed">Completed</option>
+                        <option value="pending">Pending</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Transaction Table -->
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Transactions</div>
+                        <div class="card-subtitle">
+                            View your recent transactions below.
+                        </div>
+                    </div>
+                </div>
+
+                <table class="tx-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transaction-body">
+                        <!-- Populated via JS -->
+                    </tbody>
+                </table>
+
+                <div id="transaction-empty" class="muted small">
+                    No transactions yet. Complete a trade or action.
+                </div>
+            </section>
+
+            <!-- Transaction details (optional modal) -->
+            <div id="transaction-details-modal" class="modal-backdrop">
+                <div class="modal">
+                    <div class="modal-header">
+                        <h3>Transaction Details</h3>
+                    </div>
+                    <div id="transaction-details-body" class="modal-body">
+                        <!-- Populated via JS -->
+                    </div>
+                    <div class="modal-actions">
+                        <button id="modal-close" class="btn btn-outline btn-sm">Close</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer" id="footer">
+        <!-- Loaded via partial -->
+    </footer>
+</body>
+
+</html>

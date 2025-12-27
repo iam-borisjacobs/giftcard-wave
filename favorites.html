@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Giftcard & Crypto P2P - Favorites</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/app.js" defer></script>
+</head>
+
+<body data-page="favorites" data-title="Your Favorites"
+    data-subtitle="Manage your favorite offers (gift card or crypto).">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell" id="app">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Loaded via partial -->
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">G</div>
+                <div class="logo-text">Giftcard Wave</div>
+            </div>
+
+            <header class="page-header" id="header">
+                <!-- Loaded via partial -->
+            </header>
+
+            <!-- Filters Section -->
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Filter Favorites</div>
+                        <div class="card-subtitle">
+                            Filter through your favorited offers by brand or side.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="offers-filter-row">
+                    <div class="form-col">
+                        <label>Brand</label>
+                        <select id="filter-brand">
+                            <option value="all">All brands</option>
+                            <option value="Amazon">Amazon</option>
+                            <option value="Steam">Steam</option>
+                            <option value="Google Play">Google Play</option>
+                        </select>
+                    </div>
+
+                    <div class="form-col">
+                        <label>Side</label>
+                        <select id="filter-side">
+                            <option value="all">All sides</option>
+                            <option value="buy">I am buying</option>
+                            <option value="sell">I am selling</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Favorites List -->
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Your Favorite Offers</div>
+                        <div class="card-subtitle">
+                            Click on a favorite to view full details and trade.
+                        </div>
+                    </div>
+                </div>
+
+                <div id="favorites-list" class="offers-grid"></div>
+                <div id="favorites-empty" class="muted small" style="margin-top:8px">
+                    You don't have any favorite offers. Add some to your favorites.
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="footer">
+        <!-- Loaded via partial -->
+    </div>
+
+    <!-- VIEW FAVORITE MODAL -->
+    <div id="favorite-view-modal" class="modal-backdrop">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="view-title" class="modal-title">Favorite Offer Details</h3>
+            </div>
+            <div id="view-body" class="modal-body">
+                <!-- Offer details here -->
+            </div>
+            <div class="modal-actions">
+                <button id="view-close" type="button" class="btn btn-outline btn-sm">
+                    Close
+                </button>
+                <button id="view-start-trade" type="button" class="btn btn-primary btn-sm">
+                    Start trade (demo)
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

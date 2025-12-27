@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Level 2 Verification - Giftcard Wave</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/app.js" defer></script>
+</head>
+
+<body data-page="verification-tier2">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">G</div>
+                <div>
+                    <div class="sidebar-title">Giftcard Wave</div>
+                    <div class="sidebar-subtitle">Gift card and crypto P2P desk</div>
+                </div>
+            </div>
+
+            <!-- Overview -->
+            <div class="menu-group-label">Overview</div>
+            <ul class="menu">
+                <li>
+                    <a class="menu-item" href="index.html">
+                        <span class="icon">🏠</span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="analytics.html">
+                        <span class="icon">📊</span>
+                        <span>Analytics</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="wallet.html">
+                        <span class="icon">👛</span>
+                        <span>Wallet</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="transactions.html">
+                        <span class="icon">🧾</span>
+                        <span>Transactions</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Finance -->
+            <div class="menu-group-label">Finance</div>
+            <ul class="menu">
+                <li>
+                    <a class="menu-item" href="deposit.html">
+                        <span class="icon">📥</span>
+                        <span>Deposit</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="withdraw.html">
+                        <span class="icon">📤</span>
+                        <span>Withdraw</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="escrow.html">
+                        <span class="icon">🤝</span>
+                        <span>Escrow</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Trading tools menu -->
+            <div class="menu-group-label">Trading tools</div>
+            <ul class="menu">
+                <li>
+                    <a class="menu-item" href="giftcard-offers.html">
+                        <span class="icon">🎁</span>
+                        <span>Gift card offers</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="crypto-p2p.html">
+                        <span class="icon">🪙</span>
+                        <span>Crypto P2P</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="rate-calculator.html">
+                        <span class="icon">🧮</span>
+                        <span>Rate calculator</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="favorites.html">
+                        <span class="icon">⭐</span>
+                        <span>Favorites</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="rate-target.html">
+                        <span class="icon">🎯</span>
+                        <span>Rate target</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="show-love.html">
+                        <span class="icon">❤️</span>
+                        <span>Show love</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- User Settings -->
+            <div class="menu-group-label">User Settings</div>
+            <ul class="menu">
+                <li>
+                    <a class="menu-item" href="verification.html">
+                        <span class="icon">🛡️</span>
+                        <span>Verification</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="referral.html">
+                        <span class="icon">users</span>
+                        <span>Referrals</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="settings.html">
+                        <span class="icon">⚙️</span>
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="leaderboard.html">
+                        <span class="icon">🏆</span>
+                        <span>Leaderboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item" href="logout.html">
+                        <span class="icon">🚪</span>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">G</div>
+                <div class="logo-text">Giftcard Wave</div>
+            </div>
+
+            <!-- Back / Breadcrumb -->
+            <div style="margin-bottom: 16px;">
+                <a href="verification.html"
+                    style="font-size: 13px; color: var(--muted); display: inline-flex; align-items: center; gap: 4px;">
+                    <span style="font-size: 10px;">◀</span> Back to Overview
+                </a>
+            </div>
+
+            <header class="page-header">
+                <div>
+                    <div class="page-header-title">Level 2 Verification</div>
+                    <div class="page-header-sub">
+                        Verify your residential address to unlock unlimited trading.
+                    </div>
+                </div>
+
+                <div class="page-header-right">
+                    <span class="chip">
+                        <span class="chip-dot"></span>
+                        Live demo account
+                    </span>
+                    <div class="theme-toggle-container">
+                        <input type="checkbox" id="themeToggle" class="theme-switch">
+                        <label for="themeToggle" class="theme-switch-label"></label>
+                    </div>
+                </div>
+            </header>
+
+
+            <div class="grid">
+
+                <!-- FORM COLUMN -->
+                <section class="card" style="grid-column: span 2;">
+                    <!-- Alert for prerequisites -->
+                    <div
+                        style="background: rgba(249, 115, 22, 0.1); border: 1px solid rgba(249, 115, 22, 0.2); padding: 12px; border-radius: 10px; margin-bottom: 24px; display: flex; gap: 10px; align-items: start;">
+                        <span style="font-size: 16px;">⚠️</span>
+                        <div>
+                            <strong style="color: #fb923c; font-size: 13px;">Prerequisite Required</strong>
+                            <div style="font-size: 12px; color: var(--muted); margin-top: 2px;">
+                                You must complete Level 1 Verification before submitting Level 2 documents.
+                            </div>
+                        </div>
+                    </div>
+
+                    <form id="tier2-form" action="" method="POST" enctype="multipart/form-data">
+
+                        <h3 class="card-title" style="margin-bottom: 16px;">Address Information</h3>
+
+                        <div class="form-row" style="margin-bottom: 16px;">
+                            <div class="form-col" style="flex: 2;">
+                                <label>Street Address</label>
+                                <input type="text" name="address_line1" placeholder="e.g. 123 Admiralty Way" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row" style="margin-bottom: 24px;">
+                            <div class="form-col">
+                                <label>City</label>
+                                <input type="text" name="city" placeholder="Lekki" required>
+                            </div>
+                            <div class="form-col">
+                                <label>State / Region</label>
+                                <input type="text" name="state" placeholder="Lagos" required>
+                            </div>
+                            <div class="form-col">
+                                <label>Zip / Postal Code</label>
+                                <input type="text" name="zip" placeholder="105102" required>
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <h3 class="card-title" style="margin-bottom: 8px; margin-top: 24px;">Utility Bill</h3>
+                        <p class="muted small" style="margin-bottom: 16px;">
+                            Upload a recent utility bill (Electricity, Water, Waste) or Bank Statement dated within the
+                            last 3 months. The address must match what you entered above.
+                        </p>
+
+                        <div class="form-row" style="margin-bottom: 16px;">
+                            <div class="form-col">
+                                <label>Document Type</label>
+                                <select name="utility_type">
+                                    <option value="electricity">Electricity Bill</option>
+                                    <option value="water">Water Bill</option>
+                                    <option value="bank_statement">Bank Statement</option>
+                                    <option value="waste">Waste Management Bill</option>
+                                </select>
+                            </div>
+                            <div class="form-col">
+                                <label>Date Issued</label>
+                                <input type="date" name="doc_date" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label>Upload Document</label>
+                                <div class="upload-zone">
+                                    <input type="file" name="utility_doc" accept="image/*, application/pdf" required>
+                                    <span class="upload-icon">📄</span>
+                                    <div class="upload-text">Click to upload document</div>
+                                    <div class="upload-sub">PDF, JPG, PNG (Clear & Legible)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 32px; display: flex; justify-content: flex-end;">
+                            <button type="submit" class="btn btn-primary"
+                                style="padding-left: 32px; padding-right: 32px;">
+                                Submit Level 2
+                            </button>
+                        </div>
+
+                    </form>
+                </section>
+
+            </div>
+        </main>
+    </div>
+    <footer class="footer">
+        Giftcard and crypto P2P marketplace - Demo environment - © 2025
+    </footer>
+
+</body>
+
+</html>

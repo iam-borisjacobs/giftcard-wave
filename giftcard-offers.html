@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Giftcard & Crypto P2P - Gift card offers</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/app.js" defer></script>
+</head>
+
+<body data-page="giftcard-offers" data-title="Gift card offers"
+    data-subtitle="Browse rich gift card listings or create your own P2P offer.">
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <div class="app-shell" id="app">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Loaded via partial -->
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- Main -->
+        <main class="main-content">
+            <div class="mobile-logo">
+                <div class="sidebar-logo">G</div>
+                <div class="logo-text">Giftcard Wave</div>
+            </div>
+
+            <header class="page-header" id="header">
+                <!-- Loaded via partial -->
+            </header>
+
+            <!-- Filters + quick stats -->
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Filter offers</div>
+                        <div class="card-subtitle">
+                            Narrow down offers by brand, country, side, or search.
+                        </div>
+                    </div>
+                    <button id="open-create-modal" class="btn btn-primary btn-sm">
+                        + Create offer
+                    </button>
+                </div>
+
+                <div class="offers-filter-row">
+                    <div class="form-col">
+                        <label>Brand</label>
+                        <select id="filter-brand">
+                            <option value="all">All brands</option>
+                            <option value="Amazon">Amazon</option>
+                            <option value="iTunes">iTunes</option>
+                            <option value="Steam">Steam</option>
+                            <option value="Google Play">Google Play</option>
+                        </select>
+                    </div>
+
+                    <div class="form-col">
+                        <label>Country</label>
+                        <select id="filter-country">
+                            <option value="all">Any country</option>
+                            <option value="US">United States</option>
+                            <option value="UK">United Kingdom</option>
+                            <option value="NG">Nigeria</option>
+                            <option value="CA">Canada</option>
+                        </select>
+                    </div>
+
+                    <div class="form-col">
+                        <label>Side</label>
+                        <select id="filter-side">
+                            <option value="all">Buy & sell</option>
+                            <option value="buy">I am buying</option>
+                            <option value="sell">I am selling</option>
+                        </select>
+                    </div>
+
+                    <div class="form-col">
+                        <label>Search</label>
+                        <input id="filter-search" placeholder="Search by brand, seller or payment" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- Offer cards -->
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Active gift card offers</div>
+                        <div class="card-subtitle">
+                            Click an offer to see full details and start a trade.
+                        </div>
+                    </div>
+                    <div class="muted small">
+                        <span id="offers-count">0</span> offers •
+                        best rate: <span id="offers-best-rate">–</span>
+                    </div>
+                </div>
+
+                <div id="offers-list" class="offers-grid"></div>
+                <div id="offers-empty" class="muted small" style="margin-top:8px">
+                    No offers match your filters. Adjust filters or create a new offer.
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="footer">
+        <!-- Loaded via partial -->
+    </div>
+
+    <!-- CREATE OFFER MODAL -->
+    <div id="offer-create-modal" class="modal-backdrop">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Create gift card offer</h3>
+            </div>
+            <div class="modal-body">
+                <!-- In Laravel, this becomes a normal POST form with @csrf -->
+                <form id="create-offer-form">
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label>Side</label>
+                            <select id="offer-side" required>
+                                <option value="sell">I am selling card</option>
+                                <option value="buy">I am buying card</option>
+                            </select>
+                        </div>
+                        <div class="form-col">
+                            <label>Brand</label>
+                            <input id="offer-brand" placeholder="Amazon, iTunes..." required />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label>Country</label>
+                            <input id="offer-country" placeholder="US, UK, NG..." required />
+                        </div>
+                        <div class="form-col">
+                            <label>Card currency</label>
+                            <input id="offer-card-currency" placeholder="USD, GBP..." />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label>Face value (per card)</label>
+                            <input id="offer-face-value" type="number" min="1" step="1" placeholder="e.g. 100"
+                                required />
+                        </div>
+                        <div class="form-col">
+                            <label>Rate (NGN per 1 card unit)</label>
+                            <input id="offer-rate" type="number" min="1" step="0.01" placeholder="e.g. 750" required />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label>Min amount (NGN)</label>
+                            <input id="offer-min-ngn" type="number" min="1" step="1" placeholder="e.g. 10,000" />
+                        </div>
+                        <div class="form-col">
+                            <label>Max amount (NGN)</label>
+                            <input id="offer-max-ngn" type="number" min="1" step="1" placeholder="e.g. 200,000" />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label>Payment method(s)</label>
+                            <input id="offer-payment" placeholder="Bank transfer, wallet..." required />
+                        </div>
+                        <div class="form-col">
+                            <label>Auto time limit (mins)</label>
+                            <input id="offer-time-limit" type="number" min="5" step="5" placeholder="e.g. 30" />
+                        </div>
+                    </div>
+
+                    <div style="margin-top:8px">
+                        <label>Terms & instructions</label>
+                        <textarea id="offer-terms" rows="3"
+                            placeholder="Explain how you want the card sent, proof, etc."></textarea>
+                    </div>
+
+                    <div style="margin-top:12px; display:flex; justify-content:flex-end; gap:8px">
+                        <button type="button" id="create-offer-cancel" class="btn btn-outline btn-sm">
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn btn-primary btn-sm">
+                            Save offer
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIEW OFFER MODAL -->
+    <div id="offer-view-modal" class="modal-backdrop">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="view-title" class="modal-title">Offer details</h3>
+            </div>
+            <div id="view-body" class="modal-body">
+                <!-- Filled via JS -->
+            </div>
+            <div class="modal-actions">
+                <button id="view-close" type="button" class="btn btn-outline btn-sm">
+                    Close
+                </button>
+                <button id="view-start-trade" type="button" class="btn btn-primary btn-sm">
+                    Start trade (demo)
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
