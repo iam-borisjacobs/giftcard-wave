@@ -263,7 +263,7 @@ function initLayout() {
   (You can expand later when Laravel data comes in)
 */
 function initDashboard() {
-  // 1. Handle "Add demo funds"
+ // 1. Handle "Add demo funds"
   const fundBtn = document.getElementById("fund-btn");
   if (fundBtn) {
     fundBtn.addEventListener("click", () => {
@@ -276,55 +276,130 @@ function initDashboard() {
             <input type="number" id="demo-fund-amount" class="form-input" value="50000" />
         </div>
         `,
-        () => {
-          const amt = Number(document.getElementById("demo-fund-amount").value);
-          if (amt > 0) {
-            // Update wallet
-            const wallet = JSON.parse(localStorage.getItem(APP_KEYS.WALLET) || '{"balances":{"NGN":0}}');
-            wallet.balances.NGN = (wallet.balances.NGN || 0) + amt;
-            wallet.history = wallet.history || [];
-            wallet.history.push({
+        async () => {
+          const amtInput = document.getElementById("demo-fund-amount");
+          const amt = Number(amtInput.value);
+          const confirmBtn = document.getElementById("global-modal-confirm");
+
+          if (amt <= 0) {
+             showToast("Please enter a valid amount", "error");
+             return;
+          }
+
+          // UI Loading State
+          confirmBtn.classList.add("is-loading");
+          confirmBtn.textContent = ""; // Hide text
+
+          try {
+             // CALL MOCK API
+             const response = await window.mockApi.addFunds(amt, 'NGN');
+             
+             // Update wallet on success
+             const wallet = JSON.parse(localStorage.getItem(APP_KEYS.WALLET) || '{"balances":{"NGN":0}}');
+             wallet.balances.NGN = (wallet.balances.NGN || 0) + amt;
+             
+             // History Log
+             wallet.history = wallet.history || [];
+             wallet.history.push({
                 type: 'Deposit',
                 amount: amt,
                 currency: 'NGN',
                 direction: 'In',
-                createdAt: new Date().toISOString(),
+                createdAt: response.timestamp,
                 note: 'Demo Funding'
-            });
-            localStorage.setItem(APP_KEYS.WALLET, JSON.stringify(wallet));
-            
-            // Update UI if elements exist
-            const balEl = document.getElementById("balance-ng");
-            if (balEl) balEl.textContent = wallet.balances.NGN.toLocaleString();
-            
-            showToast(`Successfully added NGN ${amt.toLocaleString()}`, "success");
+             });
+             localStorage.setItem(APP_KEYS.WALLET, JSON.stringify(wallet));
+             
+             // Update UI
+             const balEl = document.getElementById("balance-ng");
+             if (balEl) balEl.textContent = wallet.balances.NGN.toLocaleString();
+             
+             showToast(response.message, "success");
+             document.getElementById("global-modal").style.display = "none"; // Close manually
+             
+          } catch (err) {
+             showToast(err.message, "error");
+          } finally {
+             // Reset UI
+             confirmBtn.classList.remove("is-loading");
+             confirmBtn.textContent = "Confirm";
           }
         },
-        "Add Funds"
+        "Proceed"
       );
     });
   }
 
+
   // 2. Handle "Create Offer" form
   const createForm = document.getElementById("createForm");
   if (createForm) {
-      createForm.addEventListener("submit", (e) => {
+      createForm.addEventListener("submit", async (e) => {
           e.preventDefault();
           
+          const btn = createForm.querySelector("button[type='submit']");
+          if (btn.classList.contains("is-loading")) return; // Prevent double-submit
+
           // Gather data
           const type = document.getElementById("listing-type").value;
-          const asset = document.getElementById("listing-asset").value;
-          const qty = document.getElementById("listing-qty").value;
-          const price = document.getElementById("listing-price").value;
+          const asset = document.getElementById("listing-asset").value.trim();
+          const qty = Number(document.getElementById("listing-qty").value);
+          const price = Number(document.getElementById("listing-price").value);
+          const payment = document.getElementById("listing-payment").value.trim();
+          const desc = document.getElementById("listing-desc").value.trim();
+
+          // Basic UI Validation
+          if (!asset) { showToast("Asset name is required", "error"); return; }
+          if (qty <= 0) { showToast("Quantity must be positive", "error"); return; }
           
-          // Simulate API call
-          setTimeout(() => {
-              showToast("Offer created successfully!", "success");
-              createForm.reset();
-              // In a real app, we'd append to the active listings list below
-          }, 500);
+          // UI Loading
+          btn.classList.add("is-loading");
+          const originalText = btn.textContent;
+          btn.textContent = "";
+
+          try {
+             // Mock API Call
+             await window.mockApi.createOffer({
+                 type, asset, qty, price, payment, desc
+             });
+
+             // On Success
+             showToast("Offer created successfully!", "success");
+             createForm.reset();
+             
+             // Refresh listings (mock)
+             const listingContainer = document.getElementById("listings");
+             if (listingContainer) {
+                 const newItem = document.createElement("div");
+                 newItem.className = "offer-card";
+                 newItem.innerHTML = `
+                    <div class="row space-between">
+                        <div class="row">
+                            <div class="avatar">${asset[0].toUpperCase()}</div>
+                            <div>
+                                <div><strong>${asset}</strong></div>
+                                <div class="muted small">${qty} units • ${payment}</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="accent">${price.toLocaleString()} NGN</div>
+                            <button class="btn btn-outline btn-sm">Buy</button>
+                        </div>
+                    </div>
+                 `;
+                 listingContainer.prepend(newItem);
+             }
+
+          } catch (err) {
+              showToast(err.message, "error");
+          } finally {
+              btn.classList.remove("is-loading");
+              btn.textContent = originalText;
+          }
       });
   }
+          
+
 
   // 3. Load initial balances form local storage
   const wallet = JSON.parse(localStorage.getItem(APP_KEYS.WALLET) || '{"balances":{"NGN":0,"BTC":0,"USDT":0}}');

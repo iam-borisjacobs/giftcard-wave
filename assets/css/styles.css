@@ -2738,3 +2738,36 @@ body.theme-light .upload-text {
 body.theme-light .escrow-card .time-left {
   color: #0f172a !important; /* Force dark if it was using white */
 }
+/* LOADING STATE SPINNER */
+.is-loading {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.is-loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin-top: -8px;
+  margin-left: -8px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spinner 0.6s linear infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body.theme-light .is-loading::after {
+  border-color: rgba(0, 0, 0, 0.1);
+  border-top-color: #333;
+}
